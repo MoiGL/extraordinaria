@@ -33,7 +33,7 @@ class Database
         return $this->connection;
     }
 
-    
+
 
 }
 
@@ -305,13 +305,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Registro de usuario</h2>
                 <form method="POST" action="reservas.php?action=registro">
                     <input type="hidden" name="registro" value="true">
-                    <label>Nombre:</label>
-                    <input type="text" name="nombre" required><br>
-                    <label>Email:</label>
-                    <input type="email" name="email" required><br>
-                    <label>Contraseña:</label>
-                    <input type="password" name="contrasena" required><br>
-                    <input type="submit" value="Registrar">
+                    <p>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p>
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" name="contrasena" id="contrasena" required>
+                    </p>
+                    <p>
+                        <input type="submit" value="Registrar">
+                    </p>
                 </form>
             </section>
 
@@ -320,11 +328,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Iniciar sesión</h2>
                 <form method="POST" action="reservas.php?action=inicio_sesion">
                     <input type="hidden" name="inicio_sesion" value="true">
-                    <label>Email:</label>
-                    <input type="email" name="email" required><br>
-                    <label>Contraseña:</label>
-                    <input type="password" name="contrasena" required><br>
-                    <input type="submit" value="Iniciar sesión">
+                    <p>
+                        <label for="email2">Email:</label>
+                        <input type="email" name="email" id="email2" required>
+                    </p>
+                    <p>
+                        <label for="contrasena2">Contraseña:</label>
+                        <input type="password" name="contrasena" id="contrasena2" required>
+                    </p>
+                    <p>
+                        <input type="submit" value="Iniciar sesión">
+                    </p>
                 </form>
             </section>
         <?php else: ?>
@@ -360,21 +374,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Realizar reserva</h2>
                 <form method="POST" action="reservas.php?action=realizar_reserva">
                     <input type="hidden" name="realizar_reserva" value="true">
-                    <label>ID de recurso:</label>
-                    <input type="text" name="recurso_id" required><br>
-                    <label>Fecha de inicio:</label>
-                    <input type="date" name="fecha_inicio" required><br>
-                    <label>Fecha de fin:</label>
-                    <input type="date" name="fecha_fin" required><br>
-                    <input type="submit" value="Realizar reserva">
-                </form>
-                </form>
-                <h2>Cerrar sesión</h2>
-                <form method="POST" action="reservas.php">
-                    <input type="hidden" name="cerrar_sesion" value="true">
-                    <input type="submit" value="Cerrar sesión">
+                    <p>
+                        <label for="recurso_id">ID de recurso:</label>
+                        <input type="text" name="recurso_id" id="recurso_id" required>
+                    </p>
+                    <p>
+                        <label for="fecha_inicio">Fecha de inicio:</label>
+                        <input type="date" name="fecha_inicio" id="fecha_inicio" required>
+                    </p>
+                    <p>
+                        <label for="fecha_fin">Fecha de fin:</label>
+                        <input type="date" name="fecha_fin" id="fecha_fin" required>
+                    </p>
+                    <p>
+                        <input type="submit" value="Realizar reserva">
+                    </p>
                 </form>
             </section>
+
         <?php endif; // Cerrar la conexión a la base de datos
         $database->close(); ?>
     </main>
