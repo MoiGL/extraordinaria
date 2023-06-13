@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Ruta del Castro de CoañaCastro de CoañaPuente Romano</name>
+      <Point>
+        <coordinates>-7.1223,43.4345</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 1</name>
+      <Point>
+        <coordinates>-7.1482,43.4389</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 2</name>
+      <Point>
+        <coordinates>-7.1287,43.4298</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

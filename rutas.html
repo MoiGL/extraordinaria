@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Practica Extraordinaria SEW">
+  <meta name="keywords" content="HTML,CSS">
+  <meta name="author" content="Moises Garcia Lopez">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rutas - San Tirso de Abres</title>
+	<link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+	<link rel="stylesheet" type="text/css" href="estilo/layout.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Página principal</a>
+      <a href="gastronomia.html">Gastronomía</a>
+      <a href="rutas.html">Rutas</a>
+      <a href="meteorologia.html">Meteorología</a>
+      <a href="juego.html">Juego</a>
+      <a href="php/reservas.php">Reservas</a>
+    </nav>
+  </header>
+
+  <main>
+   
+    <section> 
+      <h1>Rutas Turísticas</h1>
+      <input type="file" accept=".xml">
+      <p>Añade un archivo xml de rutas para transformar en kml, mostrar mapa y altimetría</p>
+      <button>Descargar KML de rutas</button>
+    </section>
+    <article id="map">
+      <h2>Mapa de las rutas</h2>
+    </article>  
+    
+    <section>
+      <h2>Altimetría</h2>
+      <svg width="600" height="400"></svg>
+    </section>
+
+    <script src="xml/rutas.js"></script>
+    <script src="xml/altitudeChart.js"></script>
+
+  
+
+
+  </main>
+</body>
+
+</html>

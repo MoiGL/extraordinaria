@@ -1,0 +1,181 @@
+/* Estilos para el encabezado */
+header {
+  text-align: center;
+  background-color: #F5F5F5;
+  padding: 20px;
+  color: #000;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #ff0202;
+  text-decoration: none;
+  background-color: #f2f2f2;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+header h1 {
+  margin: 0;
+}
+
+section {
+  color: #000;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+section >figure >img{
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+section article img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
+  color: #000;
+  background-color: #F5F5F5;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 15px;
+  color: #000;
+  background-color: #e4e1f0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+
+/* Estilos para las listas */
+ol,
+ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Estilos para la tabla */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  color: #000;
+  background-color: #F5F
+}
+
+/* Estilos para la descripción de la lista de definiciones */
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 10px;
+}
+
+
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+button:active {
+  background-color: #3c893d;
+  color: white;
+}
+
+
+
+/* Estilos para los formularios */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #000;
+  background-color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff; /* Color de fondo */
+  color: #000;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+#map {
+  height: 400px;
+  width: 100%;
+}

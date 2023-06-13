@@ -1,0 +1,122 @@
+<rutas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ruta.xsd">
+ <ruta>
+    <nombre>Ruta del Castro de Coaña</nombre>
+    <tipo>Histórica</tipo>
+    <transporte>A pie</transporte>
+    <duracion>2 horas</duracion>
+    <agencia>Sin agencia</agencia>
+    <descripcion>Una ruta que te llevará al antiguo castro celta de Coaña</descripcion>
+    <personas>Apta para todas las edades</personas>
+    <inicio>
+      <lugar>San Tirso de Abres</lugar>
+      <direccion>Plaza del Ayuntamiento, San Tirso de Abres, Asturias</direccion>
+      <coordenadas longitud="-7.1223" latitud="43.4345" altitud="100 metros" />
+    </inicio>
+    <hitos>
+      <hito>
+        <nombre>Castro de Coaña</nombre>
+        <descripcionHito>Un antiguo asentamiento celta con restos arqueológicos</descripcionHito>
+        <coordenadas longitud="-7.1482" latitud="43.4389" altitud="150 metros" />
+        <distancia unidades="kilómetros">3.5</distancia>
+        <galeria_fotos>
+          <fotografia url="castro1.jpg" />
+          <fotografia url="castro2.jpg" />
+          <fotografia url="castro3.jpg" />
+        </galeria_fotos>
+      </hito>
+      <hito>
+        <nombre>Puente Romano</nombre>
+        <descripcionHito>Un antiguo puente de origen romano sobre el río Porcía</descripcionHito>
+        <coordenadas longitud="-7.1287" latitud="43.4298" altitud="80 metros" />
+        <distancia unidades="kilómetros">1.2</distancia>
+        <galeria_fotos>
+          <fotografia url="puente1.jpg" />
+          <fotografia url="puente2.jpg" />
+        </galeria_fotos>
+      </hito>
+    </hitos>
+  </ruta>
+
+   <ruta>
+    <nombre>Ruta de los Bosques de San Tirso</nombre>
+    <tipo>Naturaleza</tipo>
+    <transporte>A pie</transporte>
+    <duracion>3 horas</duracion>
+    <agencia>Sin agencia</agencia>
+    <descripcion>Una ruta que te adentrará en los hermosos bosques de San Tirso de Abres</descripcion>
+    <personas>Apta para todas las edades</personas>
+    <inicio>
+      <lugar>San Tirso de Abres</lugar>
+      <direccion>Plaza del Ayuntamiento, San Tirso de Abres, Asturias</direccion>
+      <coordenadas longitud="-7.1201" latitud="43.4318" altitud="90 metros" />
+    </inicio>
+    <hitos>
+      <hito>
+        <nombre>Río Eo</nombre>
+        <descripcionHito>El majestuoso río que atraviesa el concejo de San Tirso de Abres</descripcionHito>
+        <coordenadas longitud="-7.1035" latitud="43.4286" altitud="80 metros" />
+        <distancia unidades="kilómetros">2.8</distancia>
+        <galeria_fotos>
+          <fotografia url="rio1.jpg" />
+          <fotografia url="rio2.jpg" />
+        </galeria_fotos>
+      </hito>
+      <hito>
+        <nombre>Mirador de San Tirso</nombre>
+        <descripcionHito>Un punto panorámico desde donde se puede apreciar todo el concejo</descripcionHito>
+        <coordenadas longitud="-7.1334" latitud="43.4432" altitud="220 metros" />
+        <distancia unidades="kilómetros">4.5</distancia>
+        <galeria_fotos>
+          <fotografia url="mirador1.jpg" />
+          <fotografia url="mirador2.jpg" />
+          <fotografia url="mirador3.jpg" />
+        </galeria_fotos>
+        <galeria_videos>
+          <video url="mirador_video1.mp4" />
+          <video url="mirador_video2.mp4" />
+        </galeria_videos>
+      </hito>
+    </hitos>
+  </ruta>
+
+ <ruta>
+    <nombre>Ruta del Río Porcia</nombre>
+    <tipo>Naturaleza</tipo>
+    <transporte>A pie</transporte>
+    <duracion>3 horas</duracion>
+    <agencia>Sin agencia</agencia>
+    <descripcion>Una hermosa ruta que sigue el curso del Río Porcia, rodeada de naturaleza exuberante y paisajes impresionantes</descripcion>
+    <personas>Apta para todas las edades</personas>
+    <inicio>
+      <lugar>San Tirso de Abres</lugar>
+      <direccion>Plaza del Ayuntamiento, San Tirso de Abres, Asturias</direccion>
+      <coordenadas longitud="-7.0259" latitud="43.4436" altitud="100 metros" />
+    </inicio>
+    <hitos>
+      <hito>
+        <nombre>Mirador de Penacoba</nombre>
+        <descripcionHito>Un mirador situado en lo alto de una colina con vistas panorámicas del valle del Río Porcia</descripcionHito>
+        <coordenadas longitud="-7.0118" latitud="43.4543" altitud="180 metros" />
+        <distancia unidades="kilómetros">2.5</distancia>
+        <galeria_fotos>
+          <fotografia url="mirador1.jpg" />
+          <fotografia url="mirador2.jpg" />
+        </galeria_fotos>
+      </hito>
+      <hito>
+        <nombre>Cascada de San Tirso</nombre>
+        <descripcionHito>Una hermosa cascada ubicada en medio del bosque, perfecta para refrescarse en los días calurosos</descripcionHito>
+        <coordenadas longitud="-7.0342" latitud="43.4479" altitud="150 metros" />
+        <distancia unidades="kilómetros">1.8</distancia>
+        <galeria_fotos>
+          <fotografia url="cascada1.jpg" />
+          <fotografia url="cascada2.jpg" />
+        </galeria_fotos>
+        <galeria_videos>
+          <video url="cascada_video1.mp4" />
+          <video url="cascada_video2.mp4" />
+        </galeria_videos>
+      </hito>
+    </hitos>
+  </ruta>
+</rutas>
