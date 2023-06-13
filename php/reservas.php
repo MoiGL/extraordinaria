@@ -290,7 +290,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <nav>
             <a href="../index.html">Página principal</a>
-            <a href="../gastronomiaChat.html">Gastronomía</a>
+            <a href="../gastronomia.html">Gastronomía</a>
             <a href="../rutas.html">Rutas</a>
             <a href="../meteorologia.html">Meteorología</a>
             <a href="../juego.html">Juego</a>
