@@ -104,8 +104,7 @@ function ocultarResultado() {
 
 function mostrarResultado() {
     if (validarRespuestas()) {
-        const resultadoHTML = document.createElement('div');
-        resultadoHTML.classList.add('resultado');
+        const resultadoHTML = document.createElement('section');
 
         const cantidadCorrectas = document.createElement('p');
         cantidadCorrectas.textContent = `Respuestas correctas: ${respuestasCorrectas}`;
@@ -125,7 +124,6 @@ function mostrarResultado() {
         resultadoHTML.appendChild(boton);
 
         const contenedor = document.querySelector('body > main > section:nth-child(2)');
-        contenedor.innerHTML = '';
         contenedor.appendChild(resultadoHTML);
     }
 }
