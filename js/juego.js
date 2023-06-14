@@ -67,7 +67,6 @@ function validarRespuestas() {
 
 function generarPregunta(pregunta) {
     const preguntaHTML = document.createElement('div');
-    preguntaHTML.classList.add('pregunta');
 
     const titulo = document.createElement('h3');
     titulo.textContent = pregunta.pregunta;
@@ -136,8 +135,6 @@ function reiniciarTest() {
 
 function mostrarPreguntas() {
     const contenedor = document.querySelector('body > main > section:nth-child(1)');
-    //contenedor.innerHTML = '';
-
 
     preguntas.forEach((pregunta, index) => {
         const preguntaHTML = generarPregunta(pregunta);
