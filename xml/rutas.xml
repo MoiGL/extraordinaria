@@ -17,7 +17,7 @@
         <nombre>Castro de Coaña</nombre>
         <descripcionHito>Un antiguo asentamiento celta con restos arqueológicos</descripcionHito>
         <coordenadas longitud="-7.1482" latitud="43.4389" altitud="150 metros" />
-        <distancia unidades="kilómetros">3.5</distancia>
+        <distancia unidades="kilómetros" valor="3.5"/>
         <galeria_fotos>
           <fotografia url="castro1.jpg" />
           <fotografia url="castro2.jpg" />
@@ -28,13 +28,15 @@
         <nombre>Puente Romano</nombre>
         <descripcionHito>Un antiguo puente de origen romano sobre el río Porcía</descripcionHito>
         <coordenadas longitud="-7.1287" latitud="43.4298" altitud="80 metros" />
-        <distancia unidades="kilómetros">1.2</distancia>
+        <distancia unidades="kilómetros" valor="1.2"/>
         <galeria_fotos>
           <fotografia url="puente1.jpg" />
           <fotografia url="puente2.jpg" />
         </galeria_fotos>
       </hito>
     </hitos>
+    <planimetria archivo="ruta0.kml" />
+    <altimetria archivo="svg0.svg" />
   </ruta>
 
    <ruta>
@@ -55,7 +57,7 @@
         <nombre>Río Eo</nombre>
         <descripcionHito>El majestuoso río que atraviesa el concejo de San Tirso de Abres</descripcionHito>
         <coordenadas longitud="-7.1035" latitud="43.4286" altitud="80 metros" />
-        <distancia unidades="kilómetros">2.8</distancia>
+        <distancia unidades="kilómetros" valor="2.8"/>
         <galeria_fotos>
           <fotografia url="rio1.jpg" />
           <fotografia url="rio2.jpg" />
@@ -65,7 +67,7 @@
         <nombre>Mirador de San Tirso</nombre>
         <descripcionHito>Un punto panorámico desde donde se puede apreciar todo el concejo</descripcionHito>
         <coordenadas longitud="-7.1334" latitud="43.4432" altitud="220 metros" />
-        <distancia unidades="kilómetros">4.5</distancia>
+        <distancia unidades="kilómetros" valor="3"/>
         <galeria_fotos>
           <fotografia url="mirador1.jpg" />
           <fotografia url="mirador2.jpg" />
@@ -77,6 +79,8 @@
         </galeria_videos>
       </hito>
     </hitos>
+    <planimetria archivo="ruta1.kml" />
+    <altimetria archivo="svg1.svg" />
   </ruta>
 
  <ruta>
@@ -97,7 +101,7 @@
         <nombre>Mirador de Penacoba</nombre>
         <descripcionHito>Un mirador situado en lo alto de una colina con vistas panorámicas del valle del Río Porcia</descripcionHito>
         <coordenadas longitud="-7.0118" latitud="43.4543" altitud="180 metros" />
-        <distancia unidades="kilómetros">2.5</distancia>
+        <distancia unidades="kilómetros" valor="2.5"/>
         <galeria_fotos>
           <fotografia url="mirador1.jpg" />
           <fotografia url="mirador2.jpg" />
@@ -107,7 +111,7 @@
         <nombre>Cascada de San Tirso</nombre>
         <descripcionHito>Una hermosa cascada ubicada en medio del bosque, perfecta para refrescarse en los días calurosos</descripcionHito>
         <coordenadas longitud="-7.0342" latitud="43.4479" altitud="150 metros" />
-        <distancia unidades="kilómetros">1.8</distancia>
+        <distancia unidades="kilómetros" valor="1.8"/>
         <galeria_fotos>
           <fotografia url="cascada1.jpg" />
           <fotografia url="cascada2.jpg" />
@@ -118,5 +122,7 @@
         </galeria_videos>
       </hito>
     </hitos>
+    <planimetria archivo="ruta2.kml" />
+    <altimetria archivo="svg2.svg" />
   </ruta>
 </rutas>

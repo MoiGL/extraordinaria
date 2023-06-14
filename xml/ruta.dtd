@@ -18,6 +18,9 @@
     latitud CDATA #REQUIRED
     altitud CDATA #REQUIRED
 >
+
+
+
 <!ELEMENT hitos (hito+)>
 
 <!ELEMENT hito (nombre, descripcionHito, coordenadas, distancia?, galeria_fotos?, galeria_videos?)>
@@ -30,9 +33,10 @@
     latitud CDATA #REQUIRED
     altitud CDATA #REQUIRED
 >
-<!ELEMENT distancia EMPTY>
+<!ELEMENT distancia (#PCDATA)>
 <!ATTLIST distancia
-    unidades CDATA #REQUIRED
+    unidades (kilómetros | millas | metros) #REQUIRED
+    valor CDATA #REQUIRED
 >
 <!ELEMENT galeria_fotos (fotografia+)>
 <!ELEMENT fotografia EMPTY>
@@ -44,3 +48,6 @@
 <!ATTLIST video
     url CDATA #REQUIRED
 >
+
+<!ELEMENT planimetria (#PCDATA)>
+<!ELEMENT altimetria (#PCDATA)>
