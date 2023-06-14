@@ -175,7 +175,7 @@ class Noticias {
     });
     const data = await response.json();
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 2; i++) {
       const titulo = data.articles[i].title;
       const descripcion = data.articles[i].summary;
       const url = data.articles[i].link;
