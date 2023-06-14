@@ -345,7 +345,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <section>
                 <h2>Reservas y recursos turísticos</h2>
                 <form method="POST" action="reservas.php?action=reservas.php">
-                    <!-- ... código existente ... -->
                     <input type="submit" name="mostrar_reservas" value="Mostrar reservas">
                     <input type="submit" name="mostrar_recursos" value="Mostrar recursos turísticos">
                 </form>
@@ -389,6 +388,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>
                         <input type="submit" value="Realizar reserva">
                     </p>
+                </form>
+                <h2>Cerrar sesión</h2>
+                <form method="POST" action="reservas.php">
+                    <input type="hidden" name="cerrar_sesion" value="true">
+                    <input type="submit" value="Cerrar sesión">
                 </form>
             </section>
 
