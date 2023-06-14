@@ -158,7 +158,7 @@ document.body.appendChild(elementoFecha);
 //Noticias
 class Noticias {
   constructor() {
-    this.apiKey = "8HEnNTNjfsdy3QBCNYCoKUzA41SsjZ9hMC-L6m7nkUY";
+    this.apiKey = "zZ_oUy2-I5INUkkp_YNP8GC-HsdEyf3f0yKiJu5wXRc";
     this.apiUrl = "https://api.newscatcherapi.com/v2/search";
     this.listaNoticias = document.querySelector('body > main > section:nth-child(4) > ul');
   }
