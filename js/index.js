@@ -175,7 +175,7 @@ class Noticias {
     });
     const data = await response.json();
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 5; i++) {
       const titulo = data.articles[i].title;
       const descripcion = data.articles[i].summary;
       const url = data.articles[i].link;
@@ -183,14 +183,12 @@ class Noticias {
       const li = document.createElement('li');
       const a = document.createElement('a');
       const h3 = document.createElement('h3');
-      const p = document.createElement('p');
+      
 
       a.href = url;
       h3.textContent = titulo;
-      p.textContent = descripcion;
 
       a.appendChild(h3);
-      a.appendChild(p);
       li.appendChild(a);
       this.listaNoticias.appendChild(li);
     }
