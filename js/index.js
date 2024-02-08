@@ -168,7 +168,7 @@ class Noticias {
   }
 
   async getNoticias() {
-    const response = await fetch(`${this.apiUrl}?q=Asturias&lang=es&sort_by=relevancy`, {
+    const response = await fetch(`${this.apiUrl}?q=Cataluña&lang=es&sort_by=relevancy`, {
       headers: {
         "x-api-key": this.apiKey
       }

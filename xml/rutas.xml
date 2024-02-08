@@ -8,8 +8,8 @@
     <descripcion>Una ruta que te llevará al antiguo castro celta de Coaña</descripcion>
     <personas>Apta para todas las edades</personas>
     <inicio>
-      <lugar>San Tirso de Abres</lugar>
-      <direccion>Plaza del Ayuntamiento, San Tirso de Abres, Asturias</direccion>
+      <lugar>Barcelona</lugar>
+      <direccion>Plaza del Ayuntamiento, Barcelona, Cataluña</direccion>
       <coordenadas longitud="-7.1223" latitud="43.4345" altitud="100 metros" />
     </inicio>
     <hitos>
@@ -45,17 +45,17 @@
     <transporte>A pie</transporte>
     <duracion>3 horas</duracion>
     <agencia>Sin agencia</agencia>
-    <descripcion>Una ruta que te adentrará en los hermosos bosques de San Tirso de Abres</descripcion>
+    <descripcion>Una ruta que te adentrará en los hermosos bosques de Barcelona</descripcion>
     <personas>Apta para todas las edades</personas>
     <inicio>
-      <lugar>San Tirso de Abres</lugar>
-      <direccion>Plaza del Ayuntamiento, San Tirso de Abres, Asturias</direccion>
+      <lugar>Barcelona</lugar>
+      <direccion>Plaza del Ayuntamiento, Barcelona, Cataluña</direccion>
       <coordenadas longitud="-7.1201" latitud="43.4318" altitud="90 metros" />
     </inicio>
     <hitos>
       <hito>
         <nombre>Río Eo</nombre>
-        <descripcionHito>El majestuoso río que atraviesa el concejo de San Tirso de Abres</descripcionHito>
+        <descripcionHito>El majestuoso río que atraviesa el concejo de Barcelona</descripcionHito>
         <coordenadas longitud="-7.1035" latitud="43.4286" altitud="80 metros" />
         <distancia unidades="kilómetros" valor="2.8"/>
         <galeria_fotos>
@@ -92,8 +92,8 @@
     <descripcion>Una hermosa ruta que sigue el curso del Río Porcia, rodeada de naturaleza exuberante y paisajes impresionantes</descripcion>
     <personas>Apta para todas las edades</personas>
     <inicio>
-      <lugar>San Tirso de Abres</lugar>
-      <direccion>Plaza del Ayuntamiento, San Tirso de Abres, Asturias</direccion>
+      <lugar>Barcelona</lugar>
+      <direccion>Plaza del Ayuntamiento, Barcelona, Cataluña</direccion>
       <coordenadas longitud="-7.0259" latitud="43.4436" altitud="100 metros" />
     </inicio>
     <hitos>

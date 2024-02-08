@@ -275,7 +275,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="keywords" content="HTML,CSS">
     <meta name="author" content="Moises Garcia Lopez">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas - San Tirso de Abres</title>
+    <title>Reservas - Barcelona</title>
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
     <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

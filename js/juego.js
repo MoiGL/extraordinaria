@@ -1,7 +1,7 @@
 const preguntas = [
     {
         pregunta: '¿Cuál es el nombre del concejo?',
-        respuestas: ['San Tirso de Abres', 'Oviedo', 'Gijón', 'Avilés', 'Gozón'],
+        respuestas: ['Barcelona', 'Oviedo', 'Gijón', 'Avilés', 'Gozón'],
         respuestaCorrecta: 1
     },
     {
@@ -10,7 +10,7 @@ const preguntas = [
         respuestaCorrecta: 4
     },
     {
-        pregunta: '¿Donde está ubicado el concejo en Asturias?',
+        pregunta: '¿Donde está ubicado el concejo en Cataluña?',
         respuestas: ['Norte', 'Sur', 'Este', 'Oeste', 'Centro'],
         respuestaCorrecta: 4
     },
@@ -25,7 +25,7 @@ const preguntas = [
         respuestaCorrecta: 4
     },
     {
-        pregunta: '¿Cuál de estos ingredientes de cachopo no son tipicos de San Tirso de Abres?',
+        pregunta: '¿Cuál de estos ingredientes de cachopo no son tipicos de Barcelona?',
         respuestas: ['alcachofas', 'jamon', 'setas', 'queso', 'marisco'],
         respuestaCorrecta: 1
     },
@@ -35,12 +35,12 @@ const preguntas = [
         respuestaCorrecta: 5
     },
     {
-        pregunta: '¿Cuál de estos postres son tipicos de San Tirso de Abres?',
+        pregunta: '¿Cuál de estos postres son tipicos de Barcelona?',
         respuestas: ['Arroz con leche', 'Tarta de queso', 'Leche Frita', 'Todos los anteriores', 'Ninguno de los anteriores'],
         respuestaCorrecta: 4
     },
     {
-        pregunta: '¿Cuál de estos ingredientes de fabada no son tipicos de San Tirso de Abres?',
+        pregunta: '¿Cuál de estos ingredientes de fabada no son tipicos de Barcelona?',
         respuestas: ['Fabes de la granja', 'Compango', 'Chorizo asturiano', 'Morcilla asturiana', 'marisco'],
         respuestaCorrecta: 5
     },
