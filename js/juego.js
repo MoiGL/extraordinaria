@@ -1,7 +1,7 @@
 const preguntas = [
     {
-        pregunta: '¿Cuál es el nombre del concejo?',
-        respuestas: ['Barcelona', 'Oviedo', 'Gijón', 'Avilés', 'Gozón'],
+        pregunta: '¿Cuál es el nombre de la CCAA?',
+        respuestas: ['Cataluña', 'Asturias', 'Extremadura', 'Murcia', 'Alicante'],
         respuestaCorrecta: 1
     },
     {
@@ -10,9 +10,9 @@ const preguntas = [
         respuestaCorrecta: 4
     },
     {
-        pregunta: '¿Donde está ubicado el concejo en Cataluña?',
-        respuestas: ['Norte', 'Sur', 'Este', 'Oeste', 'Centro'],
-        respuestaCorrecta: 4
+        pregunta: '¿En que provincia esta la capital de Cataluña?',
+        respuestas: ['Gerona', 'Barcelona', 'Lerida', 'Tarragona', 'Ninguna de las anteriores'],
+        respuestaCorrecta: 2
     },
     {
         pregunta: '¿Cuántas noticias muestra la página principal?',
@@ -25,8 +25,8 @@ const preguntas = [
         respuestaCorrecta: 4
     },
     {
-        pregunta: '¿Cuál de estos ingredientes de cachopo no son tipicos de Barcelona?',
-        respuestas: ['alcachofas', 'jamon', 'setas', 'queso', 'marisco'],
+        pregunta: '¿Cuál de estos ingredientes no son tipicos de Cataluña?',
+        respuestas: ['Limón', 'Aceite de oliva', 'Berenjena', 'Pimiento', 'Cebolla'],
         respuestaCorrecta: 1
     },
     {
@@ -35,14 +35,14 @@ const preguntas = [
         respuestaCorrecta: 5
     },
     {
-        pregunta: '¿Cuál de estos postres son tipicos de Barcelona?',
-        respuestas: ['Arroz con leche', 'Tarta de queso', 'Leche Frita', 'Todos los anteriores', 'Ninguno de los anteriores'],
+        pregunta: '¿Cuál de estos postres son tipicos de Cataluña?',
+        respuestas: ['Arroz con leche', 'Tarta de queso', 'Leche Frita', 'Mel I Mató', 'Ninguno de los anteriores'],
         respuestaCorrecta: 4
     },
     {
-        pregunta: '¿Cuál de estos ingredientes de fabada no son tipicos de Barcelona?',
-        respuestas: ['Fabes de la granja', 'Compango', 'Chorizo asturiano', 'Morcilla asturiana', 'marisco'],
-        respuestaCorrecta: 5
+        pregunta: '¿Cuántas provincias tiene Cataluña?',
+        respuestas: ['1', '2', '3', '4', '5'],
+        respuestaCorrecta: 4
     },
     {
         pregunta: '¿Qué validaciones sigue el sitio web segun el W3C?',

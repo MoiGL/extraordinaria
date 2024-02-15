@@ -2,21 +2,27 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <Placemark>
-      <name>Ruta del Castro de CoañaCastro de CoañaPuente Romano</name>
+      <name>Cristo Tibidabo</name>
       <Point>
-        <coordinates>-7.1223,43.4345</coordinates>
+        <coordinates>2.11840557611187,41.420279056974856</coordinates>
       </Point>
     </Placemark>
     <Placemark>
       <name>Hito 1</name>
       <Point>
-        <coordinates>-7.1482,43.4389</coordinates>
+        <coordinates>2.11840557611187,41.420279056974856</coordinates>
       </Point>
     </Placemark>
     <Placemark>
       <name>Hito 2</name>
       <Point>
-        <coordinates>-7.1287,43.4298</coordinates>
+        <coordinates>2.1187464849216746,41.422178343319025</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 3</name>
+      <Point>
+        <coordinates> 2.1200611249076693,41.42513275392556</coordinates>
       </Point>
     </Placemark>
   </Document>

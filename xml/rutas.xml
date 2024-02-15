@@ -1,22 +1,32 @@
 <rutas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ruta.xsd">
  <ruta>
-    <nombre>Ruta del Castro de Coaña</nombre>
+    <nombre>Cristo Tibidabo</nombre>
     <tipo>Histórica</tipo>
     <transporte>A pie</transporte>
     <duracion>2 horas</duracion>
     <agencia>Sin agencia</agencia>
-    <descripcion>Una ruta que te llevará al antiguo castro celta de Coaña</descripcion>
+    <descripcion>El famoso Tibidabo es el El pulmón y punto más alto de Barcelona, con su Mítico y Mágico Cristo del Tibidabo y sus 575 M en la plataforma de la Torre</descripcion>
     <personas>Apta para todas las edades</personas>
     <inicio>
-      <lugar>Barcelona</lugar>
-      <direccion>Plaza del Ayuntamiento, Barcelona, Cataluña</direccion>
-      <coordenadas longitud="-7.1223" latitud="43.4345" altitud="100 metros" />
+      <lugar>El pulmón</lugar>
+      <direccion>Tibidabo, Barcelona, Cataluña</direccion>
+      <coordenadas longitud="2.11840557611187" latitud="41.420279056974856" altitud="444.258 metros" />
     </inicio>
     <hitos>
       <hito>
-        <nombre>Castro de Coaña</nombre>
-        <descripcionHito>Un antiguo asentamiento celta con restos arqueológicos</descripcionHito>
-        <coordenadas longitud="-7.1482" latitud="43.4389" altitud="150 metros" />
+        <nombre>Parque de atracciones</nombre>
+        <descripcionHito>El parque de atracciones del tibidabo en lo alto de Barcelona</descripcionHito>
+        <coordenadas  longitud="2.11840557611187" latitud="41.420279056974856" altitud="444.258 metros" />
+        <distancia unidades="kilómetros" valor="1.2"/>
+        <galeria_fotos>
+          <fotografia url="puente1.jpg" />
+          <fotografia url="puente2.jpg" />
+        </galeria_fotos>
+      </hito>
+      <hito>
+        <nombre>Templo Expiatorio Sagrado Corazón</nombre>
+        <descripcionHito>Al visitar el templo es posible ver la imagen del Cristo del Tibidabo, imponente y majestuosa sobre la estructura, donde permanece desde su colocación.</descripcionHito>
+        <coordenadas longitud="2.1187464849216746" latitud="41.422178343319025" altitud="550 metros" />
         <distancia unidades="kilómetros" valor="3.5"/>
         <galeria_fotos>
           <fotografia url="castro1.jpg" />
@@ -25,9 +35,9 @@
         </galeria_fotos>
       </hito>
       <hito>
-        <nombre>Puente Romano</nombre>
-        <descripcionHito>Un antiguo puente de origen romano sobre el río Porcía</descripcionHito>
-        <coordenadas longitud="-7.1287" latitud="43.4298" altitud="80 metros" />
+        <nombre>Escultura de Maria Llimona</nombre>
+        <descripcionHito>El parque de atracciones del tibidabo en lo alto de Barcelona</descripcionHito>
+        <coordenadas  longitud=" 2.1200611249076693" latitud="41.42513275392556" altitud="514.258 metros" />
         <distancia unidades="kilómetros" valor="1.2"/>
         <galeria_fotos>
           <fotografia url="puente1.jpg" />
@@ -39,8 +49,8 @@
     <altimetria archivo="svg0.svg" />
   </ruta>
 
-   <ruta>
-    <nombre>Ruta de los Bosques de San Tirso</nombre>
+  <ruta>
+    <nombre>Salto de Sallent</nombre>
     <tipo>Naturaleza</tipo>
     <transporte>A pie</transporte>
     <duracion>3 horas</duracion>
@@ -49,14 +59,14 @@
     <personas>Apta para todas las edades</personas>
     <inicio>
       <lugar>Barcelona</lugar>
-      <direccion>Plaza del Ayuntamiento, Barcelona, Cataluña</direccion>
-      <coordenadas longitud="-7.1201" latitud="43.4318" altitud="90 metros" />
+      <direccion>Salto de Sallent</direccion>
+      <coordenadas longitud="2.4733801250944447" latitud="42.01737214909944" altitud="241 metros" />
     </inicio>
     <hitos>
       <hito>
-        <nombre>Río Eo</nombre>
-        <descripcionHito>El majestuoso río que atraviesa el concejo de Barcelona</descripcionHito>
-        <coordenadas longitud="-7.1035" latitud="43.4286" altitud="80 metros" />
+        <nombre>Mirador del Silenci</nombre>
+        <descripcionHito>Mirador precioso</descripcionHito>
+        <coordenadas longitud="2.4505343512446363" latitud="42.01297825614544" altitud="241 metros" />
         <distancia unidades="kilómetros" valor="2.8"/>
         <galeria_fotos>
           <fotografia url="rio1.jpg" />
@@ -64,9 +74,9 @@
         </galeria_fotos>
       </hito>
       <hito>
-        <nombre>Mirador de San Tirso</nombre>
-        <descripcionHito>Un punto panorámico desde donde se puede apreciar todo el concejo</descripcionHito>
-        <coordenadas longitud="-7.1334" latitud="43.4432" altitud="220 metros" />
+        <nombre>Collet de Rajols</nombre>
+        <descripcionHito>Un punto panorámico desde donde se puede apreciar toda la zona</descripcionHito>
+        <coordenadas longitud="2.440569705203762" latitud="42.01755271354886" altitud="473 metros" />
         <distancia unidades="kilómetros" valor="3"/>
         <galeria_fotos>
           <fotografia url="mirador1.jpg" />
@@ -78,29 +88,39 @@
           <video url="mirador_video2.mp4" />
         </galeria_videos>
       </hito>
+      <hito>
+        <nombre>Estación FGC Baixador de Vallvidrera</nombre>
+        <descripcionHito>Se inicia la ruta circular desde las estacion</descripcionHito>
+        <coordenadas longitud="2.083933746757691" latitud="41.52133106146517" altitud="262 metros" />
+        <distancia unidades="kilómetros" valor="2.8"/>
+        <galeria_fotos>
+          <fotografia url="rio1.jpg" />
+          <fotografia url="rio2.jpg" />
+        </galeria_fotos>
+      </hito>
     </hitos>
     <planimetria archivo="ruta1.kml" />
     <altimetria archivo="svg1.svg" />
-  </ruta>
+  </ruta> 
 
  <ruta>
-    <nombre>Ruta del Río Porcia</nombre>
+    <nombre>Turó de Magarola</nombre>
     <tipo>Naturaleza</tipo>
     <transporte>A pie</transporte>
     <duracion>3 horas</duracion>
     <agencia>Sin agencia</agencia>
-    <descripcion>Una hermosa ruta que sigue el curso del Río Porcia, rodeada de naturaleza exuberante y paisajes impresionantes</descripcion>
+    <descripcion>Un cim “relámpago”; ideal para hacerlo una mañanita despejada y así poder disfrutar de las vistas. Apto para todas las edades.</descripcion>
     <personas>Apta para todas las edades</personas>
     <inicio>
       <lugar>Barcelona</lugar>
-      <direccion>Plaza del Ayuntamiento, Barcelona, Cataluña</direccion>
-      <coordenadas longitud="-7.0259" latitud="43.4436" altitud="100 metros" />
+      <direccion>Turó de Magarola</direccion>
+      <coordenadas longitud="2.1294411418720953" latitud="41.442838944887136" altitud="321 metros" />
     </inicio>
     <hitos>
       <hito>
-        <nombre>Mirador de Penacoba</nombre>
-        <descripcionHito>Un mirador situado en lo alto de una colina con vistas panorámicas del valle del Río Porcia</descripcionHito>
-        <coordenadas longitud="-7.0118" latitud="43.4543" altitud="180 metros" />
+        <nombre>Turó de Magarola</nombre>
+        <descripcionHito>En el Turó de Magarola las vistas son muy buenas, de un lado desde Barcelona hasta el Masnou. Y del otro el Baix Llobregat, Vallès Oriental, Vallès Occidental y Montseny.</descripcionHito>
+        <coordenadas longitud="2.1294411418720953" latitud="41.442838944887136" altitud="321 metros" />
         <distancia unidades="kilómetros" valor="2.5"/>
         <galeria_fotos>
           <fotografia url="mirador1.jpg" />
@@ -108,9 +128,23 @@
         </galeria_fotos>
       </hito>
       <hito>
-        <nombre>Cascada de San Tirso</nombre>
-        <descripcionHito>Una hermosa cascada ubicada en medio del bosque, perfecta para refrescarse en los días calurosos</descripcionHito>
-        <coordenadas longitud="-7.0342" latitud="43.4479" altitud="150 metros" />
+        <nombre>Ermita de Sant Cebrià i de Santa Justina</nombre>
+        <descripcionHito>Una hermosa ermita ubicada en medio del bosque, perfecta para descansar en los días difíciles</descripcionHito>
+        <coordenadas longitud="2.1352347133838423" latitud="41.43717676977183" altitud="150 metros" />
+        <distancia unidades="kilómetros" valor="1.8"/>
+        <galeria_fotos>
+          <fotografia url="cascada1.jpg" />
+          <fotografia url="cascada2.jpg" />
+        </galeria_fotos>
+        <galeria_videos>
+          <video url="cascada_video1.mp4" />
+          <video url="cascada_video2.mp4" />
+        </galeria_videos>
+      </hito>
+      <hito>
+        <nombre>Restos Arqueologicos del Monasterio de Sant Jeroni de la Vall d'Hebron</nombre>
+        <descripcionHito>Una hermosa ermita ubicada en medio del bosque, perfecta para descansar en los días difíciles</descripcionHito>
+        <coordenadas longitud="2.1287816195208085" latitud="41.430562950956535" altitud="50 metros" />
         <distancia unidades="kilómetros" valor="1.8"/>
         <galeria_fotos>
           <fotografia url="cascada1.jpg" />

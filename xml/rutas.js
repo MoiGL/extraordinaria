@@ -1,7 +1,6 @@
 class RutasApp {
   constructor(rutas) {
     this.rutas = rutas;
-
   }
 
 
@@ -57,12 +56,23 @@ class Ruta {
       kml += '    </Placemark>\n';
     });
 
+    // LineString para unir todos los hitos
+    kml += '    <Placemark>\n';
+    kml += '      <LineString>\n';
+    kml += '        <coordinates>\n';
+    this.hitos.forEach(function (hito) {
+      kml += '          ' + hito.longitud + ',' + hito.latitud + '\n';
+    });
+    kml += '        </coordinates>\n';
+    kml += '      </LineString>\n';
+    kml += '    </Placemark>\n';
+
     kml += '  </Document>\n';
     kml += '</kml>';
 
     return kml;
   }
-}
+
 
 var rutasApp;
 
@@ -121,8 +131,9 @@ $(document).ready(function () {
         rutas.push(ruta);
         $('main').append(rutaHTML);
       });
+
       rutasApp = new RutasApp(rutas);
-      addPlanimetry(rutas);
+     addPlanimetry(rutas);
     };
     reader.readAsText(file);
     boton[0].onclick = function () {
@@ -133,13 +144,13 @@ $(document).ready(function () {
 
 function addPlanimetry(rutas) {
   // Cargar los archivos KML y mostrarlos en el mapa
-  var map = L.map('map').setView([43.425, -6.916], 12); // Coordenadas iniciales y nivel de zoom
+  var map = L.map('map').setView([41.38987725936458, 2.1618626322033383], 6); // Coordenadas iniciales y nivel de zoom
 
   // Añadir una capa base de OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
     maxZoom: 18,
-  }).addTo(map);
+  }).addTo(map); 
 
   if (rutas !== null && rutas !== undefined && rutas.length !== 0) {
     rutas.forEach(function (ruta) {

@@ -1,52 +1,52 @@
-// API Key para OpenWeatherMap
-const apiKey = 'b4723839cff632ec277abce78c1c61f2';
+class WeatherForecast {
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+    this.baseUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+    this.language = 'es';
+    this.units = 'metric';
+  }
 
-// Obtener la ubicación del usuario mediante Geolocation API
-navigator.geolocation.getCurrentPosition((position) => {
-  const lat = position.coords.latitude;
-  const lon = position.coords.longitude;
+  async getWeatherForecast(lat, lon) {
+    const url = `${this.baseUrl}?lat=${lat}&lon=${lon}&exclude=minutely,hourly,current&appid=${this.apiKey}&lang=${this.language}&units=${this.units}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.daily.slice(0, 7);
+  }
 
-  // Construir la URL de la API para obtener las previsiones meteorológicas
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,current&appid=${apiKey}&lang=es&units=metric`;
+  displayForecast(forecast) {
+    const forecastContainer = document.createElement('section');
+    forecastContainer.innerHTML = '<h2>Próximos 7 días:</h2>';
+    
+    forecast.forEach(day => {
+      const date = new Date(day.dt * 1000).toLocaleDateString('es-ES', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+      });
+      const temp = day.temp.max.toFixed(0);
+      const icon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+      const description = day.weather[0].description;
 
-  // Hacer una solicitud GET a la API
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      // Obtener las previsiones para los próximos 7 días
-      const forecast = data.daily.slice(0, 7);
-
-
-
-      // Crear el elemento contenedor
-      const forecastContainer = document.createElement('section');
-      const titulo = document.createElement('h2');
-      titulo.textContent = 'Últimos 7 días:';
-      forecastContainer.appendChild(titulo);
-      // Agregar los elementos de pronóstico meteorológico al contenedor
-      forecast.forEach((day) => {
-        const date = new Date(day.dt * 1000).toLocaleDateString('es-ES', {
-          weekday: 'long',
-          day: 'numeric',
-          month: 'long',
-        });
-        const temp = day.temp.max.toFixed(0);
-        const icon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
-        const description = day.weather[0].description;
-
-        const forecastItem = document.createElement('article');
-        forecastItem.classList.add('forecast-item');
-        forecastItem.innerHTML = `<h3>${date}</h3>
+      const forecastItem = document.createElement('article');
+      forecastItem.classList.add('forecast-item');
+      forecastItem.innerHTML = `<h3>${date}</h3>
                             <p><img src="${icon}" alt="${description}"></p>
                             <p>${description}</p>
                             <p><strong>${temp}&deg;C</strong></p>`;
 
-        forecastContainer.appendChild(forecastItem);
-      });
-
-      // Agregar el contenedor al DOM
-      document.body.appendChild(forecastContainer);
-
+      forecastContainer.appendChild(forecastItem);
     });
-})
 
+    document.body.appendChild(forecastContainer);
+  }
+}
+
+// Coordenadas de Barcelona
+const barcelonaLat = 41.3851;
+const barcelonaLon = 2.1734;
+const apiKey = 'b4723839cff632ec277abce78c1c61f2';
+
+const weatherForecast = new WeatherForecast(apiKey);
+weatherForecast.getWeatherForecast(barcelonaLat, barcelonaLon)
+  .then(forecast => weatherForecast.displayForecast(forecast))
+  .catch(error => console.error('Error:', error));

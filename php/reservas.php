@@ -170,43 +170,59 @@ class Reserva
     }
 
     public function mostrarReservasUsuario($usuario_id)
-    {
-        $usuario_id = $this->getUserIdByEmail($this->limpiarDatos($usuario_id));
+{
+    $usuario_id = $this->getUserIdByEmail($this->limpiarDatos($usuario_id));
 
-        $sql = "SELECT r.id, r.fecha_inicio, r.fecha_fin, rc.nombre AS nombre_recurso
-                FROM reservas r
-                JOIN recursos rc ON r.recurso_id = rc.id
-                WHERE r.usuario_id = $usuario_id";
+    $sql = "SELECT r.id, r.fecha_inicio, r.fecha_fin, rc.nombre AS nombre_recurso, rc.precio
+            FROM reservas r
+            JOIN recursos rc ON r.recurso_id = rc.id
+            WHERE r.usuario_id = $usuario_id";
 
-        $result = $this->conexion->query($sql);
+    $result = $this->conexion->query($sql);
 
-        if ($result === false) {
-            echo "Error executing query: " . $this->conexion->error;
-            return; // or handle the error appropriately
-        }
-        if ($result->num_rows > 0) {
-            echo "<h2>Reservas del usuario:</h2>";
-            while ($row = $result->fetch_assoc()) {
-                echo "ID de reserva: " . $row["id"] . "<br>";
-                echo "Fecha de inicio: " . $row["fecha_inicio"] . "<br>";
-                echo "Fecha de fin: " . $row["fecha_fin"] . "<br>";
-                echo "Recurso: " . $row["nombre_recurso"] . "<br>";
-                echo "<br>";
-            }
-        } else {
-            echo "No se encontraron reservas para el usuario.";
-        }
+    if ($result === false) {
+        echo "Error executing query: " . $this->conexion->error;
+        return; // or handle the error appropriately
     }
+
+    $totalPresupuesto = 0;
+    $numReservas = 0;
+
+    if ($result->num_rows > 0) {
+        echo "<h2>Reservas del usuario:</h2>";
+        while ($row = $result->fetch_assoc()) {
+            echo "ID de reserva: " . $row["id"] . "<br>";
+            echo "Fecha de inicio: " . $row["fecha_inicio"] . "<br>";
+            echo "Fecha de fin: " . $row["fecha_fin"] . "<br>";
+            echo "Recurso: " . $row["nombre_recurso"] . "<br>";
+            echo "Precio: " . $row["precio"] . "<br>";
+            echo "<br>";
+
+            // Sumar al presupuesto total
+            $totalPresupuesto += $row["precio"];
+            // Contar las reservas
+            $numReservas++;
+        }
+
+        // Mostrar presupuesto total y número de reservas
+        echo "<strong>Total de Reservas: </strong>" . $numReservas . "<br>";
+        echo "<strong>Presupuesto Total: </strong>" . $totalPresupuesto  . " €<br>";
+    } else {
+        echo "No se encontraron reservas para el usuario.";
+    }
+}
+
 
     public function mostrarRecursosDisponibles()
     {
-        $sql = "SELECT id, nombre, precio FROM recursos";
+        $sql = "SELECT id, nombre, precio, descripcion FROM recursos";
         $result = $this->conexion->query($sql);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "ID de recurso: " . $row["id"] . "<br>";
                 echo "Nombre: " . $row["nombre"] . "<br>";
+                echo "Descripcion: " . $row["descripcion"] . "<br>";
                 echo "Precio: " . $row["precio"] . "€<br>";
                 echo "<br>";
             }

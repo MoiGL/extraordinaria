@@ -33,7 +33,7 @@ class Carousel {
   }
 }
 
-const images = ['multimedia/img/1.jpg', 'multimedia/img/2.jpg', 'multimedia/img/3.jpg', 'multimedia/img/4.jpg', 'multimedia/img/5.jpg'];
+const images = ['multimedia/img/1b.jpg', 'multimedia/img/2b.jpg', 'multimedia/img/3b.jpg', 'multimedia/img/4b.jpg', 'multimedia/img/5b.jpg'];
 const carousel = new Carousel(images);
 carousel.start();
 
@@ -41,24 +41,8 @@ carousel.start();
 class Weather {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.lat = null;
-    this.lon = null;
-  }
-
-  // Método para obtener la ubicación del usuario mediante Geolocation API
-  getLocation() {
-    return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          this.lat = position.coords.latitude;
-          this.lon = position.coords.longitude;
-          resolve();
-        },
-        (error) => {
-          reject(error);
-        }
-      );
-    });
+    this.lat = 41.3851;
+    this.lon = 2.1734;
   }
 
   // Método para obtener las previsiones meteorológicas
@@ -129,21 +113,17 @@ class Weather {
   
 }
 
-// Crear el objeto carrusel y iniciar el carrusel
+
 const apiKey = 'b4723839cff632ec277abce78c1c61f2';
 const weather = new Weather(apiKey);
 
-weather.getLocation()
-  .then(() => {
-    return weather.getForecast();
-  })
+  weather.getForecast()
   .then((forecast) => {
     weather.renderCurrentWeather(forecast);
   })
   .catch((error) => {
     console.error(error);
   });
-
 
 
 
@@ -155,11 +135,10 @@ document.body.appendChild(elementoFecha);
 
 
 
-//Noticias
 class Noticias {
   constructor() {
-    this.apiKey = "zZ_oUy2-I5INUkkp_YNP8GC-HsdEyf3f0yKiJu5wXRc";
-    this.apiUrl = "https://api.newscatcherapi.com/v2/search";
+    this.apiKey = "880174242cbf4a64b66fa340d92f744a";
+    this.apiUrl = "https://newsapi.org/v2/everything?q=barcelona&apiKey=" + this.apiKey;
     this.listaNoticias = document.querySelector('body > main > section:nth-child(4) > ul');
   }
 
@@ -168,29 +147,34 @@ class Noticias {
   }
 
   async getNoticias() {
-    const response = await fetch(`${this.apiUrl}?q=Cataluña&lang=es&sort_by=relevancy`, {
-      headers: {
-        "x-api-key": this.apiKey
+    try {
+      const response = await fetch(this.apiUrl);
+      if (!response.ok) {
+        throw new Error('Error al obtener las noticias: ' + response.status);
       }
-    });
-    const data = await response.json();
+      const data = await response.json();
 
-    for (let i = 0; i < 5; i++) {
-      const titulo = data.articles[i].title;
-      const descripcion = data.articles[i].summary;
-      const url = data.articles[i].link;
+      for (let i = 0; i < 5; i++) {
+        const titulo = data.articles[i].title;
+        const descripcion = data.articles[i].summary;
+        const url = data.articles[i].link;
 
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      const h3 = document.createElement('h3');
-      
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        const h3 = document.createElement('h3');
 
-      a.href = url;
-      h3.textContent = titulo;
+        a.href = url;
+        h3.textContent = titulo;
 
-      a.appendChild(h3);
-      li.appendChild(a);
-      this.listaNoticias.appendChild(li);
+        a.appendChild(h3);
+        li.appendChild(a);
+        this.listaNoticias.appendChild(li);
+      }
+    } catch (error) {
+      console.error('Se produjo un error al obtener las noticias:', error);
+      const errorLi = document.createElement('li');
+      errorLi.textContent = 'Se produjo un error al obtener las noticias: ' + error.message;
+      this.listaNoticias.appendChild(errorLi);
     }
   }
 };
@@ -199,4 +183,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const noticias = new Noticias();
   noticias.init();
 });
+
 
