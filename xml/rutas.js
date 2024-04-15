@@ -73,7 +73,7 @@ class Ruta {
     return kml;
   }
 
-
+}
 var rutasApp;
 
 $(document).ready(function () {
@@ -133,7 +133,7 @@ $(document).ready(function () {
       });
 
       rutasApp = new RutasApp(rutas);
-     addPlanimetry(rutas);
+      addPlanimetry(rutas);
     };
     reader.readAsText(file);
     boton[0].onclick = function () {
@@ -147,10 +147,10 @@ function addPlanimetry(rutas) {
   var map = L.map('map').setView([41.38987725936458, 2.1618626322033383], 6); // Coordenadas iniciales y nivel de zoom
 
   // Añadir una capa base de OpenStreetMap
-   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
     maxZoom: 18,
-  }).addTo(map); 
+  }).addTo(map);
 
   if (rutas !== null && rutas !== undefined && rutas.length !== 0) {
     rutas.forEach(function (ruta) {
