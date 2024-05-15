@@ -132,13 +132,14 @@ elementoFecha.textContent = `Última actualización: ${fechaActualizacion.toLoca
 document.body.appendChild(elementoFecha);
 
 
-
 class Noticias {
   constructor() {
       this.apiKey = "880174242cbf4a64b66fa340d92f744a";
       this.apiUrl = "https://newsapi.org/v2/everything?q=barcelona&apiKey=" + this.apiKey;
-      this.listaNoticias = document.querySelector('body > main > section:nth-child(4) > ul');
+      this.listaNoticias = document.createElement('ul'); // Crear el elemento <ul> en el constructor
       this.buscarNoticiasBtn = document.getElementById('buscarNoticias');
+      this.contenedorNoticias = document.querySelector('body > main > section:nth-child(4)'); // Seleccionar el contenedor de noticias
+      this.contenedorNoticias.appendChild(this.listaNoticias); // Agregar la lista de noticias al contenedor
   }
 
   init() {
@@ -155,9 +156,6 @@ class Noticias {
           }
           const data = await response.json();
 
-          // Elimina este bucle for
-
-          // Agrega este código aquí
           this.listaNoticias.innerHTML = ''; // Limpiar la lista antes de agregar nuevas noticias
           for (let i = 0; i < 5; i++) {
               const titulo = data.articles[i].title;
@@ -188,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const noticias = new Noticias();
   noticias.init();
 });
+
 
 
 
