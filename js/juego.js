@@ -2,55 +2,55 @@ const preguntas = [
     {
         pregunta: '¿Cuál es el nombre de la CCAA?',
         respuestas: ['Cataluña', 'Asturias', 'Extremadura', 'Murcia', 'Alicante'],
-        respuestaCorrecta: 1
+        respuestaCorrecta: 0
     },
     {
         pregunta: '¿Qué tecnologías se usaron para desarrollar el proyecto?',
         respuestas: ['HTML y CSS', 'JavaScript', 'PHP', 'Todas las anteriores', 'Ninguna de las anteriores'],
-        respuestaCorrecta: 4
+        respuestaCorrecta: 3
     },
     {
-        pregunta: '¿En que provincia esta la capital de Cataluña?',
+        pregunta: '¿En qué provincia está la capital de Cataluña?',
         respuestas: ['Gerona', 'Barcelona', 'Lerida', 'Tarragona', 'Ninguna de las anteriores'],
-        respuestaCorrecta: 2
+        respuestaCorrecta: 1
     },
     {
         pregunta: '¿Cuántas noticias muestra la página principal?',
         respuestas: ['1', '2', '3', '4', '5'],
-        respuestaCorrecta: 4
+        respuestaCorrecta: 3
     },
     {
         pregunta: '¿Cuántas imágenes contiene el carrusel de la página principal?',
         respuestas: ['1', '2', '3', '4', '5'],
-        respuestaCorrecta: 4
+        respuestaCorrecta: 3
     },
     {
-        pregunta: '¿Cuál de estos ingredientes no son tipicos de Cataluña?',
+        pregunta: '¿Cuál de estos ingredientes no es típico de Cataluña?',
         respuestas: ['Limón', 'Aceite de oliva', 'Berenjena', 'Pimiento', 'Cebolla'],
-        respuestaCorrecta: 1
+        respuestaCorrecta: 0
     },
     {
-        pregunta: '¿Cuántos dias de previsión tiene la sección meteorología de la página?',
+        pregunta: '¿Cuántos días de previsión tiene la sección meteorología de la página?',
         respuestas: ['2', '4', '5', '6', '7'],
-        respuestaCorrecta: 5
+        respuestaCorrecta: 4
     },
     {
-        pregunta: '¿Cuál de estos postres son tipicos de Cataluña?',
+        pregunta: '¿Cuál de estos postres es típico de Cataluña?',
         respuestas: ['Arroz con leche', 'Tarta de queso', 'Leche Frita', 'Mel I Mató', 'Ninguno de los anteriores'],
-        respuestaCorrecta: 4
+        respuestaCorrecta: 3
     },
     {
         pregunta: '¿Cuántas provincias tiene Cataluña?',
         respuestas: ['1', '2', '3', '4', '5'],
-        respuestaCorrecta: 4
+        respuestaCorrecta: 3
     },
     {
-        pregunta: '¿Qué validaciones sigue el sitio web segun el W3C?',
-        respuestas: ['HTML5 Válido', 'CSS Válido', 'Niguna', 'HTML5 y CSS válido', 'ISO 9023/34'],
+        pregunta: '¿Qué validaciones sigue el sitio web según el W3C?',
+        respuestas: ['HTML5 Válido', 'CSS Válido', 'Ninguna', 'HTML5 y CSS válidos', 'ISO 9023/34'],
         respuestaCorrecta: 3
     }
-    // Agrega aquí las demás preguntas
 ];
+
 let respuestasCorrectas = 0;
 
 function validarRespuestas() {
@@ -62,48 +62,70 @@ function validarRespuestas() {
         return false;
     }
 
+    respuestasCorrectas = 0; // Resetear contador de respuestas correctas
+    respuestas.forEach((respuesta) => {
+        const [, preguntaIndex] = respuesta.name.split('-');
+        const pregunta = preguntas[parseInt(preguntaIndex)];
+        if (pregunta.respuestaCorrecta === parseInt(respuesta.value)) {
+            respuestasCorrectas++;
+        }
+    });
+
     return true;
 }
 
-function generarPregunta(pregunta) {
+function generarPregunta(pregunta, index) {
     const preguntaHTML = document.createElement('div');
 
     const titulo = document.createElement('h3');
     titulo.textContent = pregunta.pregunta;
     preguntaHTML.appendChild(titulo);
 
-    pregunta.respuestas.forEach((respuesta, index) => {
+    pregunta.respuestas.forEach((respuesta, i) => {
         const label = document.createElement('label');
         const input = document.createElement('input');
         input.type = 'radio';
-        input.name = `pregunta-${preguntas.indexOf(pregunta)}`; // Asigna el mismo nombre de grupo para todas las respuestas de la misma pregunta
-        input.value = index;
+        input.name = `pregunta-${index}`; // Asigna el mismo nombre de grupo para todas las respuestas de la misma pregunta
+        input.value = i;
 
         label.appendChild(input);
-        label.appendChild(document.createTextNode(' ' + respuesta + ' '));
+        label.appendChild(document.createTextNode(` ${respuesta} `));
 
         preguntaHTML.appendChild(label);
     });
 
-
     return preguntaHTML;
 }
 
-function validarRespuesta(pregunta, respuesta) {
-    if (pregunta.respuestaCorrecta === respuesta) {
-        respuestasCorrectas++;
-    }
-}
-
 function ocultarResultado() {
-    const contenedor = document.querySelector('body > main > section:nth-child(2)');
-    contenedor.innerHTML = '';
+    const contenedor = document.querySelector('body > main > section:nth-child(2)');    
+    // Obtener el primer hijo del contenedor
+    const primerHijo = contenedor.firstElementChild;
+    // Eliminar todos los elementos hijos excepto el primer hijo
+    let hijoActual = primerHijo.nextElementSibling;
+    while (hijoActual) {
+        const siguienteHijo = hijoActual.nextElementSibling;
+        contenedor.removeChild(hijoActual);
+        hijoActual = siguienteHijo;
+    }
 }
 
 
 function mostrarResultado() {
     if (validarRespuestas()) {
-        const resultadoHTML = document.createElement('section');
+        const main = document.querySelector('body > main');
+        const contenedor = main.children[1]; // Asumiendo que es el segundo section en main
+        let resultadoHTML = contenedor.querySelector('article');
+
+        if (!resultadoHTML) {
+            resultadoHTML = document.createElement('article');
+            contenedor.appendChild(resultadoHTML);
+        }
+
+        resultadoHTML.innerHTML = ''; // Resetear contenido del contenedor de resultados
+        const titulo = document.createElement('h3');
+        titulo.textContent = 'Puntuación:';
+        resultadoHTML.appendChild(titulo);
 
         const cantidadCorrectas = document.createElement('p');
         cantidadCorrectas.textContent = `Respuestas correctas: ${respuestasCorrectas}`;
@@ -121,38 +143,30 @@ function mostrarResultado() {
         boton.textContent = 'Volver a intentar';
         boton.addEventListener('click', reiniciarTest);
         resultadoHTML.appendChild(boton);
-
-        const contenedor = document.querySelector('body > main > section:nth-child(2)');
-        contenedor.appendChild(resultadoHTML);
     }
 }
 
 function reiniciarTest() {
     respuestasCorrectas = 0;
     ocultarResultado();
-
+    mostrarPreguntas();
 }
 
 function mostrarPreguntas() {
     const contenedor = document.querySelector('body > main > section:nth-child(1)');
+    contenedor.innerHTML = ''; // Limpia el contenedor antes de añadir nuevas preguntas
 
     preguntas.forEach((pregunta, index) => {
-        const preguntaHTML = generarPregunta(pregunta);
+        const preguntaHTML = generarPregunta(pregunta, index);
         contenedor.appendChild(preguntaHTML);
-
-        const inputs = preguntaHTML.querySelectorAll('input');
-        inputs.forEach((input) => {
-            input.addEventListener('change', () => {
-                validarRespuesta(pregunta, parseInt(input.value));
-            });
-        });
     });
+
     const boton = document.createElement('button');
     boton.textContent = 'Enviar respuestas';
     boton.addEventListener('click', mostrarResultado);
-    contenedor.appendChild(boton)
+    contenedor.appendChild(boton);
 }
 
-mostrarPreguntas();
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarPreguntas();
+});

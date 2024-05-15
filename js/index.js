@@ -6,8 +6,6 @@ class Carousel {
     this.totalImages = images.length;
     this.imageElement = document.querySelector('figure img');
     this.imageElement.src = images[0];
-    /* this.prevButton.addEventListener('click', this.showPrev.bind(this));
-    this.nextButton.addEventListener('click', this.showNext.bind(this)); */
   }
 
   showPrev() {
@@ -137,51 +135,59 @@ document.body.appendChild(elementoFecha);
 
 class Noticias {
   constructor() {
-    this.apiKey = "880174242cbf4a64b66fa340d92f744a";
-    this.apiUrl = "https://newsapi.org/v2/everything?q=barcelona&apiKey=" + this.apiKey;
-    this.listaNoticias = document.querySelector('body > main > section:nth-child(4) > ul');
+      this.apiKey = "880174242cbf4a64b66fa340d92f744a";
+      this.apiUrl = "https://newsapi.org/v2/everything?q=barcelona&apiKey=" + this.apiKey;
+      this.listaNoticias = document.querySelector('body > main > section:nth-child(4) > ul');
+      this.buscarNoticiasBtn = document.getElementById('buscarNoticias');
   }
 
   init() {
-    this.getNoticias();
+      this.buscarNoticiasBtn.addEventListener('click', () => {
+          this.getNoticias();
+      });
   }
 
   async getNoticias() {
-    try {
-      const response = await fetch(this.apiUrl);
-      if (!response.ok) {
-        throw new Error('Error al obtener las noticias: ' + response.status);
+      try {
+          const response = await fetch(this.apiUrl);
+          if (!response.ok) {
+              throw new Error('Error al obtener las noticias: ' + response.status);
+          }
+          const data = await response.json();
+
+          // Elimina este bucle for
+
+          // Agrega este código aquí
+          this.listaNoticias.innerHTML = ''; // Limpiar la lista antes de agregar nuevas noticias
+          for (let i = 0; i < 5; i++) {
+              const titulo = data.articles[i].title;
+              const descripcion = data.articles[i].summary;
+              const url = data.articles[i].link;
+
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              const h3 = document.createElement('h3');
+
+              a.href = url;
+              h3.textContent = titulo;
+
+              a.appendChild(h3);
+              li.appendChild(a);
+              this.listaNoticias.appendChild(li);
+          }
+      } catch (error) {
+          console.error('Se produjo un error al obtener las noticias:', error);
+          const errorLi = document.createElement('li');
+          errorLi.textContent = 'Se produjo un error al obtener las noticias: ' + error.message;
+          this.listaNoticias.appendChild(errorLi);
       }
-      const data = await response.json();
-
-      for (let i = 0; i < 5; i++) {
-        const titulo = data.articles[i].title;
-        const descripcion = data.articles[i].summary;
-        const url = data.articles[i].link;
-
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        const h3 = document.createElement('h3');
-
-        a.href = url;
-        h3.textContent = titulo;
-
-        a.appendChild(h3);
-        li.appendChild(a);
-        this.listaNoticias.appendChild(li);
-      }
-    } catch (error) {
-      console.error('Se produjo un error al obtener las noticias:', error);
-      const errorLi = document.createElement('li');
-      errorLi.textContent = 'Se produjo un error al obtener las noticias: ' + error.message;
-      this.listaNoticias.appendChild(errorLi);
-    }
   }
-};
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const noticias = new Noticias();
   noticias.init();
 });
+
 
 

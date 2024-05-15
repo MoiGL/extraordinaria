@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Salto de Sallent</name>
+      <Point>
+        <coordinates>2.4733801250944447,42.01737214909944</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 1</name>
+      <Point>
+        <coordinates>2.4505343512446363,42.01297825614544</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 2</name>
+      <Point>
+        <coordinates>2.440569705203762,42.01755271354886</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 3</name>
+      <Point>
+        <coordinates>2.4505343512446363,42.01297825614544</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <LineString>
+        <coordinates>
+          2.4505343512446363,42.01297825614544
+          2.440569705203762,42.01755271354886
+          2.4505343512446363,42.01297825614544
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

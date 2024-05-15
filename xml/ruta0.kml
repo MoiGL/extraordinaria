@@ -25,5 +25,14 @@
         <coordinates> 2.1200611249076693,41.42513275392556</coordinates>
       </Point>
     </Placemark>
+    <Placemark>
+      <LineString>
+        <coordinates>
+          2.11840557611187,41.420279056974856
+          2.1187464849216746,41.422178343319025
+           2.1200611249076693,41.42513275392556
+        </coordinates>
+      </LineString>
+    </Placemark>
   </Document>
 </kml>

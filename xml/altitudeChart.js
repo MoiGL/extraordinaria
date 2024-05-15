@@ -22,64 +22,70 @@ class AltitudeChart {
 
 
   extractAltitudes(xmlDoc) {
-    const coordenadasElements = xmlDoc.querySelectorAll("coordenadas");
-    const altitudes = Array.from(coordenadasElements).map((element) =>
-      parseFloat(element.getAttribute("altitud"))
-    );
-    return [altitudes];
-  }
-
-  extractAltitudesRuta(xmlDoc) {
+    // Encuentra todos los elementos de ruta en el documento XML
     const rutaElements = xmlDoc.querySelectorAll("ruta");
-    const altitudes = Array.from(rutaElements).map((rutaElement) => {
-      const coordenadasElements = rutaElement.querySelectorAll("coordenadas");
-      return Array.from(coordenadasElements).map((coordenadasElement) =>
-        parseFloat(coordenadasElement.getAttribute("altitud"))
-      );
+    const rutas = Array.from(rutaElements).map((rutaElement) => {
+        // Encuentra todos los elementos de coordenadas dentro de cada ruta
+        const coordenadasElements = rutaElement.querySelectorAll("coordenadas");
+        // Extrae las altitudes y retorna un array de altitudes
+        const altitudes = Array.from(coordenadasElements).map((element) =>
+            parseFloat(element.getAttribute("altitud"))
+        );
+        return altitudes;
     });
-    return altitudes;
+    return rutas; // Devuelve un array de arrays, uno para cada ruta
+}
+
+drawChart(rutas) {
+  if (!Array.isArray(rutas) || rutas.length === 0) {
+      console.error("No hay rutas válidas");
+      return;
   }
 
+  const svg = d3.select("svg");
+  const margin = { top: 10, right: 20, bottom: 30, left: 50 };
+  const innerWidth = this.width - margin.left - margin.right;
+  const innerHeight = this.height - margin.top - margin.bottom;
 
-  drawChart(altitudes) {
-    if (!Array.isArray(altitudes) || altitudes.length === 0) {
-      console.error("Las altitudes no son válidas");
-      return;
-    }
-    const svg = d3.select("svg");
-    const margin = { top: 10, right: 20, bottom: 30, left: 50 };
-    const innerWidth = this.width - margin.left - margin.right;
-    const innerHeight = this.height - margin.top - margin.bottom;
-
-    const x = d3
-      .scaleLinear()
-      .domain([0, d3.max(altitudes, (d) => d.length)])
+  // Crear escalas
+  const x = d3.scaleLinear()
+      .domain([0, d3.max(rutas, ruta => ruta.length)]) // Longitud máxima de las rutas
       .range([0, innerWidth]);
 
-    const y = d3
-      .scaleLinear()
-      .domain([0, d3.max(altitudes, (d) => d3.max(d))])
+  const y = d3.scaleLinear()
+      .domain([0, d3.max(rutas, ruta => d3.max(ruta))]) // Altura máxima
       .range([innerHeight, 0]);
 
-    const line = d3
-      .line()
+  // Crear generador de línea
+  const line = d3.line()
       .x((d, i) => x(i))
-      .y((d) => y(d));
+      .y(d => y(d));
 
-    const g = svg
-      .append("g")
+  const g = svg.append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    altitudes.forEach((d) => {
-      g.append("path")
-        .datum(d)
-        .attr("fill", "none")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 2)
-        .attr("d", line);
-    });
+  // Dibuja una línea por cada ruta
+  rutas.forEach((ruta, index) => {
+      const color = index === 0 ? "steelblue" : `hsl(${index * 30}, 100%, 50%)`; // Color basado en el índice
 
-    g.append("g")
+      g.append("path")
+          .datum(ruta)
+          .attr("fill", "none")
+          .attr("stroke", color)
+          .attr("stroke-width", 2)
+          .attr("d", line);
+      
+      // Añade entrada a la leyenda
+      g.append("text")
+          .attr("class", "legend")
+          .attr("x", innerWidth + 10)
+          .attr("y", margin.top + (index * 20))
+          .text(`Ruta ${index + 1}`)
+          .style("fill", color);
+  });
+
+  // Configurar ejes
+  g.append("g")
       .attr("transform", `translate(0, ${innerHeight})`)
       .call(d3.axisBottom(x).tickSizeOuter(0))
       .append("text")
@@ -89,7 +95,7 @@ class AltitudeChart {
       .text("Hitos")
       .style("fill", "black");
 
-    g.append("g")
+  g.append("g")
       .call(d3.axisLeft(y).tickSizeOuter(0))
       .append("text")
       .attr("class", "axis-label")
@@ -97,77 +103,37 @@ class AltitudeChart {
       .attr("y", -35)
       .attr("transform", "rotate(-90)")
       .attr("text-anchor", "middle")
-      .text("altura(m)")
+      .text("Altura (m)")
       .style("fill", "black");
 
-    svg
-      .append("text")
+  /* // Añade el título del gráfico
+  svg.append("text")
       .attr("class", "chart-title")
       .attr("x", this.width / 2)
       .attr("y", margin.top + 8)
-      .text("Gráfico de altura");
+      .text("Gráfico de altimetría"); */
 
-      return svg;
-  }
+  return svg;
+}
 
-  render() {
+
+render() {
     const fileInput = document.querySelector("input[type=file]");
 
     fileInput.addEventListener("change", (event) => {
-      const file = event.target.files[0];
+        const file = event.target.files[0];
 
-      this.parseXML(file)
-        .then((xmlDoc) => {
-          const altitudes = this.extractAltitudes(xmlDoc);
-          this.drawChart(altitudes);
-
-          /* const altitudes2 = this.extractAltitudesRuta(xmlDoc);
-          const altitudesRuta1 = altitudes2[2];
-          this.downloadChart(altitudesRuta1, 'svg2.svg'); */
-
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+        this.parseXML(file)
+            .then(xmlDoc => {
+                const rutas = this.extractAltitudes(xmlDoc);
+                this.drawChart(rutas);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     });
+}
 
-
-  }
-
-
-  downloadChart(altitudes, filename) {
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    svg.setAttribute("width", "400");
-    svg.setAttribute("height", "300");
-  
-    const chartWidth = 300;
-    const chartHeight = 200;
-    const maxAltitude = Math.max(...altitudes);
-    const scale = chartHeight / maxAltitude;
-  
-    for (let i = 0; i < altitudes.length; i++) {
-      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-      rect.setAttribute("x", (i * 30).toString());
-      rect.setAttribute("y", (chartHeight - altitudes[i] * scale).toString());
-      rect.setAttribute("width", "20");
-      rect.setAttribute("height", (altitudes[i] * scale).toString());
-      rect.setAttribute("fill", "blue");
-      svg.appendChild(rect);
-  
-      // Agregar el valor de altura en el eje y
-      const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-      text.setAttribute("x", (i * 30).toString());
-      text.setAttribute("y", (chartHeight - altitudes[i] * scale - 5).toString());
-      text.setAttribute("fill", "black");
-      text.setAttribute("font-size", "12");
-      text.textContent = altitudes[i].toString();
-      svg.appendChild(text);
-    }
-  
-    this.downloadSVG(svg.outerHTML, filename);
-  }
-  
 
   
   downloadSVG(svgContent, filename) {

@@ -240,7 +240,7 @@ class Reserva
 }
 
 // Crear una instancia de la clase Database
-$database = new Database("localhost", "DBUSER2021", "DBPSWD2021", "central_reservas");
+$database = new Database("localhost", "DBUSER2023", "DBPSWD2023", "central_reservas");
 $database->connect();
 $conexion = $database->getConnection();
 

@@ -1,5 +1,5 @@
 <rutas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ruta.xsd">
- <ruta>
+  <ruta>
     <nombre>Cristo Tibidabo</nombre>
     <tipo>Histórica</tipo>
     <transporte>A pie</transporte>
@@ -91,7 +91,7 @@
       <hito>
         <nombre>Estación FGC Baixador de Vallvidrera</nombre>
         <descripcionHito>Se inicia la ruta circular desde las estacion</descripcionHito>
-        <coordenadas longitud="2.083933746757691" latitud="41.52133106146517" altitud="262 metros" />
+       <coordenadas longitud="2.4505343512446363" latitud="42.01297825614544" altitud="241 metros" />
         <distancia unidades="kilómetros" valor="2.8"/>
         <galeria_fotos>
           <fotografia url="rio1.jpg" />

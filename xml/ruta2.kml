@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Turó de Magarola</name>
+      <Point>
+        <coordinates>2.1294411418720953,41.442838944887136</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 1</name>
+      <Point>
+        <coordinates>2.1294411418720953,41.442838944887136</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 2</name>
+      <Point>
+        <coordinates>2.1352347133838423,41.43717676977183</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hito 3</name>
+      <Point>
+        <coordinates>2.1287816195208085,41.430562950956535</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <LineString>
+        <coordinates>
+          2.1294411418720953,41.442838944887136
+          2.1352347133838423,41.43717676977183
+          2.1287816195208085,41.430562950956535
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
