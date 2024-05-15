@@ -73,7 +73,6 @@ function validarRespuestas() {
 
     return true;
 }
-
 function generarPregunta(pregunta, index) {
     const preguntaHTML = document.createElement('div');
 
@@ -82,23 +81,22 @@ function generarPregunta(pregunta, index) {
     preguntaHTML.appendChild(titulo);
 
     pregunta.respuestas.forEach((respuesta, i) => {
-        const label = document.createElement('label'); // Crear elemento label
+        const label = document.createElement('label');
 
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = `pregunta-${index}`;
         input.value = i;
+        input.title = respuesta; // Añadir el atributo title con el texto de la respuesta
 
-        label.appendChild(input); // Colocar el input dentro del label
-        label.appendChild(document.createTextNode(respuesta)); // Añadir el texto después del checkbox
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(respuesta));
 
-        preguntaHTML.appendChild(label); // Agregar el label al contenedor de la pregunta
+        preguntaHTML.appendChild(label);
     });
 
     return preguntaHTML;
 }
-
-
 
 function ocultarResultado() {
     const contenedor = document.querySelector('body > main > section:nth-child(2)');    
