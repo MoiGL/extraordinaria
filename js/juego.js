@@ -82,20 +82,23 @@ function generarPregunta(pregunta, index) {
     preguntaHTML.appendChild(titulo);
 
     pregunta.respuestas.forEach((respuesta, i) => {
-        const label = document.createElement('label');
+        const label = document.createElement('label'); // Crear elemento label
+
         const input = document.createElement('input');
         input.type = 'radio';
-        input.name = `pregunta-${index}`; // Asigna el mismo nombre de grupo para todas las respuestas de la misma pregunta
+        input.name = `pregunta-${index}`;
         input.value = i;
 
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(` ${respuesta} `));
+        label.appendChild(input); // Colocar el input dentro del label
+        label.appendChild(document.createTextNode(respuesta)); // Añadir el texto después del checkbox
 
-        preguntaHTML.appendChild(label);
+        preguntaHTML.appendChild(label); // Agregar el label al contenedor de la pregunta
     });
 
     return preguntaHTML;
 }
+
+
 
 function ocultarResultado() {
     const contenedor = document.querySelector('body > main > section:nth-child(2)');    
