@@ -1,4 +1,5 @@
 /* Estilos para el encabezado */
+/* Especificidad: 0,0,1 */
 header {
   text-align: center;
   background-color: #F5F5F5;
@@ -6,6 +7,7 @@ header {
   color: #000;
 }
 
+/* Especificidad: 0,0,1 */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
@@ -14,7 +16,7 @@ body {
   font-size: larger;
 }
 
-
+/* Especificidad: 0,0,2 */
 nav a {
   color: #a50101;
   text-decoration: none;
@@ -24,7 +26,7 @@ nav a {
   transition: background-color 0.3s ease;
 }
 
-
+/* Especificidad: 0,0,1 */
 section {
   color: #000;
   background-color: #fff;
@@ -32,7 +34,7 @@ section {
   font-size: 23px;
 }
 
-
+/* Especificidad: 0,0,3 */
 section >figure >img{
   width: 600px;
   height: 400px;
@@ -41,7 +43,7 @@ section >figure >img{
 }
 
 
-
+/* Especificidad: 0,0,1 */
 h2 {
   font-size: 1.5rem;
   text-align: center;
@@ -51,7 +53,7 @@ h2 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-
+/* Especificidad: 0,0,1 */
 h3 {
   font-size: 1.2rem;
   text-align: center;
@@ -65,23 +67,27 @@ h3 {
 
 
 /* Estilos para las listas */
+/* Especificidad: 0,0,1 */
 ol,
 ul {
   margin: 0;
   padding: 0 0 0 20px;
 }
 
+/* Especificidad: 0,0,1 */
 li {
   margin-bottom: 10px;
 }
 
 /* Estilos para la tabla */
+/* Especificidad: 0,0,1 */
 table {
   border-collapse: collapse;
   width: 100%;
   margin-top: 30px;
 }
 
+/* Especificidad: 0,0,1 */
 th,
 td {
   text-align: left;
@@ -89,26 +95,30 @@ td {
   border: 1px solid #ddd;
 }
 
+/* Especificidad: 0,0,1 */
 th {
   color: #000;
   background-color: #F5F
 }
 
 /* Estilos para la descripción de la lista de definiciones */
+/* Especificidad: 0,0,1 */
 dl {
   margin: 0;
 }
 
+/* Especificidad: 0,0,1 */
 dt {
   font-weight: bold;
 }
 
+/* Especificidad: 0,0,1 */
 dd {
   margin: 0 0 10px;
 }
 
 
-
+/* Especificidad: 0,0,1 */
 button {
   padding: 10px 20px;
   background-color: #295729;
@@ -119,19 +129,8 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #45a049;
-  color: white;
-}
 
-button:active {
-  background-color: #3c893d;
-  color: white;
-}
-
-
-
-
+/* Especificidad: 0,0,1 */
 label {
   display: block;
   margin-top: 10px;
@@ -140,6 +139,7 @@ label {
   background-color: #ffffff;
 }
 
+/* Especificidad: 0,1,1 */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -151,7 +151,7 @@ input[type="date"] {
   background-color: #fff; /* Color de fondo */
   color: #000;
 }
-
+/* Especificidad: 0,1,1 */
 input[type="submit"] {
   margin-top: 10px;
   padding: 5px 10px;

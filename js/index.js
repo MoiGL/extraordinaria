@@ -137,7 +137,7 @@ class Noticias {
       this.apiKey = "880174242cbf4a64b66fa340d92f744a";
       this.apiUrl = "https://newsapi.org/v2/everything?q=barcelona&apiKey=" + this.apiKey;
       this.listaNoticias = document.createElement('ul'); // Crear el elemento <ul> en el constructor
-      this.buscarNoticiasBtn = document.getElementById('buscarNoticias');
+      this.buscarNoticiasBtn = document.querySelector('body > main > section:nth-child(4) > button');
       this.contenedorNoticias = document.querySelector('body > main > section:nth-child(4)'); // Seleccionar el contenedor de noticias
       this.contenedorNoticias.appendChild(this.listaNoticias); // Agregar la lista de noticias al contenedor
   }
