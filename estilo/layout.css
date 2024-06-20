@@ -77,17 +77,3 @@ body main section svg {
   height: 20em;
 }
 
-
-img.map-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 10px;
-}
-
-@media (min-width: 600px) {
-  img.map-image {
-    width: 800px;
-    height: 600px;
-  }
-}
