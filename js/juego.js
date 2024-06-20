@@ -76,7 +76,7 @@ function validarRespuestas() {
 function generarPregunta(pregunta, index) {
     const preguntaHTML = document.createElement('article');
 
-    const titulo = document.createElement('h3');
+    const titulo = document.createElement('h2');
     titulo.textContent = pregunta.pregunta;
     preguntaHTML.appendChild(titulo);
 
