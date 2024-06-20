@@ -107,39 +107,8 @@ section img {
 }
 
 
-/* Estilo para la imagen del carrusel */
-section>div>picture>img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 article > label {
   padding: 0.5em;
 }
 
-
-/* Estilo para los botones */
-/* section>div>button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 1em;
-  cursor: pointer;
-  font-size: 2.4em;
-  z-index: 1;
-}
-
-
-section>div>button:last-of-type {
-  right: 7em;
-}
-
-
-section>div>button:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
- */
+ 

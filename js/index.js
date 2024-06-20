@@ -11,11 +11,10 @@ class Carousel {
     ];
     this.currentImage = 0;
     this.totalImages = this.images.length;
-    this.pictureElement = document.querySelector('#carousel-picture');
+    this.pictureElement = document.querySelector('body > main > section:nth-child(1) > picture');
     this.imgElement = this.pictureElement.querySelector('img');
     this.sourceElements = this.pictureElement.querySelectorAll('source');
     this.updateImage();
-   // this.addEventListeners();
   }
 
   updateImage() {
@@ -47,10 +46,6 @@ class Carousel {
     }, 5000);
   }
 
-/*   addEventListeners() {
-    document.querySelector('body > main > section:nth-child(1) > div > button:nth-child(2)').addEventListener('click', () => this.showPrev());
-    document.getElementById('body > main > section:nth-child(1) > div > button:nth-child(3)').addEventListener('click', () => this.showNext());
-  } */
 }
 
 const carousel = new Carousel();
@@ -200,7 +195,7 @@ class MapaEstaticoGoogle {
         var centro = "center=" + this.latitud + "," + this.longitud;
         //zoom (obligatorio si no hay marcadores)
         //zoom: 1 (el mundo), 5 (continentes), 10 (ciudad), 15 (calles), 20 (edificios)
-        var zoom ="&zoom=9";
+        var zoom ="&zoom=8";
         //Tamaño del mapa en pixeles (obligatorio)
         var tamaño= "&size=800x600";
         var marcador = "&markers=color:red%7Clabel:S%7C" + this.latitud + "," + this.longitud;

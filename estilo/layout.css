@@ -50,10 +50,6 @@ main {
   padding: 2%;
 }
 
-#map {
-  min-width: 20em;
-}
-
 
 
 main > article{
@@ -64,21 +60,6 @@ main > article{
 
 figure img {
   max-width: 50%;
-}
-
-#carousel-picture {
-  max-width: 80vw;  /* 80% de la anchura de la ventana gráfica */
-  max-height: 60vh; /* 60% de la altura de la ventana gráfica */
-  width: 50%;
-  height: auto;
-  overflow: hidden;
-}
-
-/* Asegúrate de que las imágenes se ajusten al tamaño del contenedor */
-#carousel-picture img {
-  width: 80%;
-  height: 80%;
-  height: auto;
 }
 
 /* Ajuste opcional para el botón si es necesario */

@@ -28,7 +28,7 @@ class WeatherForecast {
 
       const forecastItem = document.createElement('article');
       forecastItem.classList.add('forecast-item');
-      forecastItem.innerHTML = `<h3>${date}</h3>
+      forecastItem.innerHTML = `<h2>${date}</h2>
                             <p><img src="${icon}" alt="${description}"></p>
                             <p>${description}</p>
                             <p><strong>${temp}&deg;C</strong></p>`;
