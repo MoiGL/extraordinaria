@@ -78,7 +78,7 @@ drawChart(rutas) {
       // Añade entrada a la leyenda
       g.append("text")
           .attr("class", "legend")
-          .attr("x", innerWidth + 10)
+          .attr("x", innerWidth - 80)
           .attr("y", margin.top + (index * 20))
           .text(`Ruta ${index + 1}`)
           .style("fill", color);

@@ -30,8 +30,6 @@
         <distancia unidades="kilómetros" valor="3.5"/>
         <galeria_fotos>
           <fotografia url="castro1.jpg" />
-          <fotografia url="castro2.jpg" />
-          <fotografia url="castro3.jpg" />
         </galeria_fotos>
       </hito>
       <hito>
@@ -40,8 +38,7 @@
         <coordenadas  longitud=" 2.1200611249076693" latitud="41.42513275392556" altitud="514.258 metros" />
         <distancia unidades="kilómetros" valor="1.2"/>
         <galeria_fotos>
-          <fotografia url="puente1.jpg" />
-          <fotografia url="puente2.jpg" />
+          <fotografia url="rio1.jpg" />
         </galeria_fotos>
       </hito>
     </hitos>
@@ -66,7 +63,7 @@
       <hito>
         <nombre>Mirador del Silenci</nombre>
         <descripcionHito>Mirador precioso</descripcionHito>
-        <coordenadas longitud="2.4505343512446363" latitud="42.01297825614544" altitud="241 metros" />
+        <coordenadas longitud="2.4733801250944447" latitud="42.01737214909944" altitud="241 metros" />
         <distancia unidades="kilómetros" valor="2.8"/>
         <galeria_fotos>
           <fotografia url="rio1.jpg" />
@@ -80,8 +77,6 @@
         <distancia unidades="kilómetros" valor="3"/>
         <galeria_fotos>
           <fotografia url="mirador1.jpg" />
-          <fotografia url="mirador2.jpg" />
-          <fotografia url="mirador3.jpg" />
         </galeria_fotos>
         <galeria_videos>
           <video url="mirador_video1.mp4" />
@@ -94,8 +89,7 @@
        <coordenadas longitud="2.4505343512446363" latitud="42.01297825614544" altitud="241 metros" />
         <distancia unidades="kilómetros" valor="2.8"/>
         <galeria_fotos>
-          <fotografia url="rio1.jpg" />
-          <fotografia url="rio2.jpg" />
+          <fotografia url="mirador3.jpg" />
         </galeria_fotos>
       </hito>
     </hitos>
@@ -134,7 +128,6 @@
         <distancia unidades="kilómetros" valor="1.8"/>
         <galeria_fotos>
           <fotografia url="cascada1.jpg" />
-          <fotografia url="cascada2.jpg" />
         </galeria_fotos>
         <galeria_videos>
           <video url="cascada_video1.mp4" />
@@ -147,7 +140,6 @@
         <coordenadas longitud="2.1287816195208085" latitud="41.430562950956535" altitud="50 metros" />
         <distancia unidades="kilómetros" valor="1.8"/>
         <galeria_fotos>
-          <fotografia url="cascada1.jpg" />
           <fotografia url="cascada2.jpg" />
         </galeria_fotos>
         <galeria_videos>

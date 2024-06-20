@@ -70,34 +70,29 @@
         <section>
             <h2>Tabla de platos típicos y sus ingredientes</h2>
             <table>
+                <caption>Tabla de platos y tipos de platos</caption>
                 <thead>
                     <tr>
-                        <th>Plato</th>
-                        <th>Ingredientes</th>
-                        <th>Tipo de plato</th>
+                        <th scope="col" id="plato">Plato</th>
+                        <th scope="col" id="tipo">Tipo de plato</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Calçot/Calsot</td>
-                        <td>Es una variedad de cebolla. Se suele acompañar de salsa romescu</td>
-                        <td>Plato principal</td>
+                        <th scope="row" id="calçot" headers="plato">Calçot/Calsot</th>
+                        <td headers="calçot tipo">Plato principal</td>
                     </tr>
                     <tr>
-                        <td>Romescu</td>
-                        <td>Salsa compuesta de ajo, avellana o almendra, aceite de oliva y ñoras.
-                        </td>
-                        <td>Salsa</td>
+                        <th scope="row" id="romescu" headers="plato">Romescu</th>
+                        <td headers="romescu tipo">Salsa</td>
                     </tr>
                     <tr>
-                        <td>Escalivada</td>
-                        <td>Berenjena, pimiento y cebolla</td>
-                        <td>Plato principal</td>
+                        <th scope="row" id="escalivada" headers="plato">Escalivada</th>
+                        <td headers="escalivada tipo">Plato principal</td>
                     </tr>
                     <tr>
-                        <td>Crema Catalana</td>
-                        <td>Yemas de huevo, azúcar y Maicena</td>
-                        <td>Postre</td>
+                        <th scope="row" id="crema" headers="plato">Crema Catalana</th>
+                        <td headers="crema tipo">Postre</td>
                     </tr>
                 </tbody>
             </table>

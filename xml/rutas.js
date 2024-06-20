@@ -1,25 +1,3 @@
-class RutasApp {
-  constructor(rutas) {
-    this.rutas = rutas;
-  }
-
-
-  descargarRutas(rutas) {
-    if (rutas !== null && rutas !== undefined && rutas.length !== 0) {
-      rutas.forEach(function (ruta, index) {
-        var kml = ruta.toKML();
-        var kmlEncoded = encodeURIComponent(kml);
-        var downloadLink = document.createElement('a');
-        downloadLink.textContent = 'Descargar KML de la ruta ' + index;
-        downloadLink.href = 'data:application/vnd.google-earth.kml+xml;charset=utf-8,' + kmlEncoded;
-        downloadLink.download = 'ruta' + index + '.kml';
-        downloadLink.click();
-      });
-    }
-  }
-
-}
-
 class Ruta {
   constructor(nombre, inicioLongitud, inicioLatitud, descripcion) {
     this.nombre = nombre;
@@ -47,7 +25,7 @@ class Ruta {
     kml += '    </Placemark>\n';
 
     // Etiquetas KML para los hitos de la ruta
-    this.hitos.forEach(function (hito, index) {
+    this.hitos.forEach((hito, index) => {
       kml += '    <Placemark>\n';
       kml += '      <name>Hito ' + (index + 1) + '</name>\n';
       kml += '      <Point>\n';
@@ -60,7 +38,7 @@ class Ruta {
     kml += '    <Placemark>\n';
     kml += '      <LineString>\n';
     kml += '        <coordinates>\n';
-    this.hitos.forEach(function (hito) {
+    this.hitos.forEach((hito) => {
       kml += '          ' + hito.longitud + ',' + hito.latitud + '\n';
     });
     kml += '        </coordinates>\n';
@@ -72,21 +50,89 @@ class Ruta {
 
     return kml;
   }
-
 }
-var rutasApp;
 
-$(document).ready(function () {
-  var boton = $('button');
-  boton[0].style.display = 'none';
-  const fileInput = document.querySelector("input[type=file]");
-  fileInput.addEventListener('change', function (event) {
+class RutasApp {
+  constructor(rutas) {
+    this.rutas = rutas;
+  }
+
+  descargarRutas() {
+    if (this.rutas && this.rutas.length > 0) {
+      this.rutas.forEach((ruta, index) => {
+        var kml = ruta.toKML();
+        var kmlEncoded = encodeURIComponent(kml);
+        var downloadLink = document.createElement('a');
+        downloadLink.textContent = 'Descargar KML de la ruta ' + index;
+        downloadLink.href = 'data:application/vnd.google-earth.kml+xml;charset=utf-8,' + kmlEncoded;
+        downloadLink.download = 'ruta' + index + '.kml';
+        downloadLink.click();
+      });
+    }
+  }
+}
+
+
+class Mapa {
+  constructor(ruta) {
+    this.ruta = ruta;
+    this.section = document.createElement('section');
+
+    let heading = document.createElement('h3');
+    heading.textContent = 'Mapa de la ruta: ' + this.ruta.nombre;
+
+    this.mapImage = document.createElement('img');
+    this.mapImage.alt = 'Mapa de la ruta ' + this.ruta.nombre;
+
+    this.section.appendChild(heading);
+    this.section.appendChild(this.mapImage);
+
+    let main = document.querySelector('main');
+    main.appendChild(this.section);
+
+    this.loadStaticMap();
+  }
+
+  loadStaticMap() {
+    const baseUrl = 'https://maps.googleapis.com/maps/api/staticmap?';
+    const size = '600x400'; // Tamaño del mapa
+    const apiKey = 'AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU'; // Reemplaza esto con tu clave de API de Google Maps
+
+    // Generar los marcadores y el camino
+    const markers = this.ruta.hitos.map((hito, index) => 
+      `markers=label:${index + 1}%7C${hito.latitud},${hito.longitud}`
+    ).join('&');
+    
+    const path = 'path=color:0xff0000ff|weight:2|' + this.ruta.hitos.map(hito =>
+      `${hito.latitud},${hito.longitud}`
+    ).join('|');
+    
+    const mapUrl = `${baseUrl}size=${size}&${path}&${markers}&key=${apiKey}`;
+
+    this.mapImage.src = mapUrl;
+  }
+}
+
+
+class InterfazUsuario {
+  constructor() {
+    this.fileInput = document.querySelector("input[type=file]");
+    this.boton = document.querySelector('button');
+    this.inicializar();
+  }
+
+  inicializar() {
+    this.boton.style.display = 'none';
+    this.fileInput.addEventListener('change', (event) => this.cargarArchivo(event));
+    this.boton.addEventListener('click', () => this.descargarRutas());
+  }
+
+  cargarArchivo(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
     const rutas = [];
-    reader.onload = function (e) {
-      var boton = $('button');
-      boton[0].style.display = 'block';
+    reader.onload = (e) => {
+      this.boton.style.display = 'block';
       const xmlString = e.target.result;
       const xmlDoc = $.parseXML(xmlString);
       const $xml = $(xmlDoc);
@@ -116,7 +162,7 @@ $(document).ready(function () {
           rutaHTML += hitoDescripcion + "</li>";
           ruta.agregarHito(hitoLongitud, hitoLatitud);
         });
-        rutaHTML += "</ul>";
+        rutaHTML += "</ul><article>";
 
         // Mostrar las fotografías de la ruta
         $(this).find('hito').each(function () {
@@ -127,38 +173,27 @@ $(document).ready(function () {
             rutaHTML += "<img src='multimedia/img/" + fotografiaURL + "' alt='" + textoAlternativo + "'>";
           });
         });
-        rutaHTML += "</section>";
+        rutaHTML += "</article></section>";
         rutas.push(ruta);
         $('main').append(rutaHTML);
+
+        // Crear un mapa para esta ruta
+        new Mapa(ruta);
       });
 
-      rutasApp = new RutasApp(rutas);
-      addPlanimetry(rutas);
+      this.rutasApp = new RutasApp(rutas);
     };
     reader.readAsText(file);
-    boton[0].onclick = function () {
-      rutasApp.descargarRutas(rutas);
-    };
-  });
-});
+  }
 
-function addPlanimetry(rutas) {
-  // Cargar los archivos KML y mostrarlos en el mapa
-  var map = L.map('map').setView([41.38987725936458, 2.1618626322033383], 6); // Coordenadas iniciales y nivel de zoom
-
-  // Añadir una capa base de OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    maxZoom: 18,
-  }).addTo(map);
-
-  if (rutas !== null && rutas !== undefined && rutas.length !== 0) {
-    rutas.forEach(function (ruta) {
-      var kmlContent = ruta.toKML();
-      var kmlLayer = omnivore.kml.parse(kmlContent);
-      kmlLayer.addTo(map);
-    });
+  descargarRutas() {
+    if (this.rutasApp) {
+      this.rutasApp.descargarRutas();
+    }
   }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  new InterfazUsuario();
+});
 

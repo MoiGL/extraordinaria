@@ -1,114 +1,112 @@
-/* Estilos generales */
-/* Especificidad: 0,0,0 */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* layout.css */
+
+/* Estilos normales */
+header {
+  display: flex;
+  flex-direction: column;
 }
 
-
-/* Flexbox */
-/* Especificidad: 0,0,1 */
-main {
+nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
+  justify-content: space-around;
 }
 
-/* Especificidad: 0,0,1 */
-nav {
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Especificidad: 0,0,1 */
-h1 {
-  text-align: center;
-}
-
-/* Especificidad: 0,0,2 */
-header h1 {
-  margin: 0;
-}
-
-/* Especificidad: 0,0,1 */
-section {
-  flex-basis: 100%;
-  max-width: 800px;
-  margin: 40px;
-  align-items: center;
-  border-radius: 5px;
-}
-
-
-/* Estilos CSS para hacer la imagen adaptable */
-/* Especificidad: 0,0,2 */
-figure>img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Especificidad: 0,0,2 */
-section > img {
-  max-width: 33%;
-  height: auto;
-}
-
-/* Especificidad: 0,0,2 */
-section >form {
-  text-align: center;
-}
-
-/* Estilos para los títulos de sección */
-/* Especificidad: 0,0,2 */
-section> h2 {
-  margin-bottom: 10px;
-}
-
-/* Especificidad: 0,0,1 */
-article {
-  text-align: center;
-}
-
-/* Especificidad: 0,0,1 */
-ul,
-ol {
-  padding-left: 40px;
-}
-
-/* Especificidad: 0,0,1 */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-/* Especificidad: 0,0,1 */
-th,
-td {
-  padding: 10px;
-  text-align: center;
-}
-
-/* Especificidad: 0,0,1 */
-button {
+article > label {
   display: inline-block;
+  margin-right: 1em;
 }
 
-/* Especificidad: 0,0,3 */
-body > main > article{
-  height: 400px;
+article > img {
+  padding: 1em;
+}
+
+input {
+  padding: 1em;
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 38em) {
+  nav {
+    flex-direction: column;
+    align-items: center; /* Opcional: para centrar los elementos verticalmente */
+  }
+
+  nav a { /* Asumiendo que los elementos dentro del nav son enlaces */
+    width: 100%; /* Opcional: para que los enlaces ocupen todo el ancho */
+    text-align: center; /* Opcional: para centrar el texto dentro de los enlaces */
+  }
+
+  article {
+    display: block;
+  }
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+#map {
+  min-width: 20em;
+}
+
+
+
+main > article{
+  justify-self: center;
+  align-self: center;
+}
+
+
+figure img {
+  max-width: 50%;
+}
+
+#carousel-picture {
+  max-width: 80vw;  /* 80% de la anchura de la ventana gráfica */
+  max-height: 60vh; /* 60% de la altura de la ventana gráfica */
+  width: 50%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Asegúrate de que las imágenes se ajusten al tamaño del contenedor */
+#carousel-picture img {
+  width: 80%;
+  height: 80%;
+  height: auto;
+}
+
+/* Ajuste opcional para el botón si es necesario */
+button {
+  margin-top: 1rem;
+}
+
+main section article > img {
+  width: 15em;
+  height: 15em;
+}
+
+body main section svg {
+  width: 40em;
+  height: 20em;
+}
+
+
+img.map-image {
+  display: block;
   width: 100%;
+  height: auto;
+  margin-top: 10px;
 }
 
-/* Estilos para los formularios */
-/* Especificidad: 0,0,1 */
-form {
-  margin-bottom: 20px;
-}
-
-/* Especificidad: 0,0,3 */
-section article img{
-  max-width: 100%;
-  max-height: 100%;
+@media (min-width: 600px) {
+  img.map-image {
+    width: 800px;
+    height: 600px;
+  }
 }

@@ -14,8 +14,7 @@ class WeatherForecast {
   }
 
   displayForecast(forecast) {
-    const forecastContainer = document.createElement('section');
-    forecastContainer.innerHTML = '<h2>Próximos 7 días:</h2>';
+    const forecastContainer = document.querySelector('main');
     
     forecast.forEach(day => {
       const date = new Date(day.dt * 1000).toLocaleDateString('es-ES', {

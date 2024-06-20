@@ -6,12 +6,12 @@ const preguntas = [
     },
     {
         pregunta: '¿Qué tecnologías se usaron para desarrollar el proyecto?',
-        respuestas: ['HTML y CSS', 'JavaScript', 'PHP', 'Todas las anteriores', 'Ninguna de las anteriores'],
+        respuestas: ['HTML y CSS', 'JavaScript', 'PHP', 'Todas las anteriores', 'Ninguna'],
         respuestaCorrecta: 3
     },
     {
         pregunta: '¿En qué provincia está la capital de Cataluña?',
-        respuestas: ['Gerona', 'Barcelona', 'Lerida', 'Tarragona', 'Ninguna de las anteriores'],
+        respuestas: ['Gerona', 'Barcelona', 'Lerida', 'Tarragona', 'Ninguna'],
         respuestaCorrecta: 1
     },
     {
@@ -36,7 +36,7 @@ const preguntas = [
     },
     {
         pregunta: '¿Cuál de estos postres es típico de Cataluña?',
-        respuestas: ['Arroz con leche', 'Tarta de queso', 'Leche Frita', 'Mel I Mató', 'Ninguno de los anteriores'],
+        respuestas: ['Arroz con leche', 'Tarta de queso', 'Leche Frita', 'Mel I Mató', 'Ninguno'],
         respuestaCorrecta: 3
     },
     {
@@ -74,7 +74,7 @@ function validarRespuestas() {
     return true;
 }
 function generarPregunta(pregunta, index) {
-    const preguntaHTML = document.createElement('div');
+    const preguntaHTML = document.createElement('article');
 
     const titulo = document.createElement('h3');
     titulo.textContent = pregunta.pregunta;

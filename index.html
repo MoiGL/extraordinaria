@@ -10,7 +10,10 @@
 	<title>Barcelona</title>
 	<link rel="stylesheet" type="text/css" href="estilo/estilo.css">
 	<link rel="stylesheet" type="text/css" href="estilo/layout.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-image/leaflet-image.js"></script>
 </head>
 
 <body>
@@ -22,6 +25,7 @@
 			<a href="meteorologia.html">Meteorología</a>
 			<a href="juego.html">Juego</a>
 			<a href="php/reservas.php">Reservas</a>
+
 		</nav>
 		<h1>Home</h1>
 	</header>
@@ -30,27 +34,27 @@
 	<main>
 
 		<section>
-			<figure>
-				<h2>Recursos turísticos Cataluña</h2>
-				<img src="multimedia/img/1.jpg" alt="Imagen del carrusel">
-			</figure>
+			<h2>Recursos turísticos Cataluña</h2>
+			<div>
+				<picture id="carousel-picture">
+					<source media="(max-width: 799px)" srcset="multimedia/img/1b-movil.jpg">
+					<source media="(min-width: 800px)" srcset="multimedia/img/1b.jpg">
+					<img src="multimedia/img/1b.jpg" alt="Imagen del carrusel">
+				</picture>
+			</div>
 		</section>
-
 
 		<section>
 			<h2>Tiempo en Barcelona</h2>
 			<p>Se muestra el tiempo de Barcelona para el dia de hoy</p>
-			<section>
-				<h3>Tiempo hoy</h3>
-			</section>
+
 		</section>
+
 		<section>
-			<h2>Cataluña</h2>
-			<article>
-				<h3>Mapa de Cataluña:</h3>
-				<img src="multimedia/img/mapa.png" alt="Mapa de Barcelona">
-			</article>
+			<h2>Mapa de Cataluña</h2>
+
 		</section>
+
 		<section>
 			<h2>Noticias</h2>
 			<button>Buscar noticias</button>

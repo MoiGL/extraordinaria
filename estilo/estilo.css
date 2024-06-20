@@ -1,163 +1,145 @@
-/* Estilos para el encabezado */
-/* Especificidad: 0,0,1 */
-header {
-  text-align: center;
-  background-color: #F5F5F5;
-  padding: 20px;
-  color: #000;
-}
+/* estilo.css */
 
-/* Especificidad: 0,0,1 */
+/* General reset and base styling */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  background-color: #f2f2f2;
-  color: #000;
-  font-size: larger;
-}
-
-/* Especificidad: 0,0,2 */
-nav a {
-  color: #a50101;
-  text-decoration: none;
-  background-color: #f2f2f2;
-  padding: 5px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-/* Especificidad: 0,0,1 */
-section {
-  color: #000;
-  background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  font-size: 23px;
-}
-
-/* Especificidad: 0,0,3 */
-section >figure >img{
-  width: 600px;
-  height: 400px;
-  display: block;
-  margin: 0 auto;
-}
-
-
-/* Especificidad: 0,0,1 */
-h2 {
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 20px;
-  color: #000;
-  background-color: #F5F5F5;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-/* Especificidad: 0,0,1 */
-h3 {
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 15px;
-  color: #000;
-  background-color: #e4e1f0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-
-
-/* Estilos para las listas */
-/* Especificidad: 0,0,1 */
-ol,
-ul {
   margin: 0;
-  padding: 0 0 0 20px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-/* Especificidad: 0,0,1 */
-li {
-  margin-bottom: 10px;
+header {
+  background-color: #333;
+  color: white;
+  padding: 1em;
 }
 
-/* Estilos para la tabla */
-/* Especificidad: 0,0,1 */
+nav {
+  background-color: #444;
+  padding: 1em 0;
+}
+
+
+nav a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  color: rgb(187, 180, 245);
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+
+nav a:hover {
+  background-color: #5a2f2f;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+
+section h2 {
+  border-bottom: 0.2em solid #ddd;
+  padding-bottom: 0.5em;
+}
+
 table {
-  border-collapse: collapse;
   width: 100%;
-  margin-top: 30px;
+  border-collapse: collapse;
+  margin: 2em 0;
 }
 
-/* Especificidad: 0,0,1 */
+table,
 th,
 td {
+  border: 0.1em solid #ddd;
+}
+
+th,
+td {
+  padding: 0.8em;
   text-align: left;
-  padding: 8px;
-  border: 1px solid #ddd;
 }
 
-/* Especificidad: 0,0,1 */
-th {
-  color: #000;
-  background-color: #F5F
+thead>tr>th {
+  background-color: #f4f4f4;
 }
 
-/* Estilos para la descripción de la lista de definiciones */
-/* Especificidad: 0,0,1 */
-dl {
-  margin: 0;
-}
 
-/* Especificidad: 0,0,1 */
-dt {
+table th {
   font-weight: bold;
 }
 
-/* Especificidad: 0,0,1 */
-dd {
-  margin: 0 0 10px;
+tbody th {
+  font-weight: normal;
 }
 
 
-/* Especificidad: 0,0,1 */
-button {
-  padding: 10px 20px;
-  background-color: #295729;
+video,
+audio {
+  max-width: 90%;
+  margin: 1em 0;
+}
+
+
+h3 {
+  font-size: medium;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+}
+
+article {
+  border: 0.2em solid #ddd;
+  margin: 1%;
+  padding: 2%;
+
+}
+
+section {
+  padding-bottom: 1em;
+}
+
+
+section img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Estilo para la imagen del carrusel */
+section>div>picture>img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+article > label {
+  padding: 0.5em;
+}
+
+
+/* Estilo para los botones */
+/* section>div>button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  padding: 1em;
   cursor: pointer;
+  font-size: 2.4em;
+  z-index: 1;
 }
 
 
-/* Especificidad: 0,0,1 */
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #000;
-  background-color: #ffffff;
+section>div>button:last-of-type {
+  right: 7em;
 }
 
-/* Especificidad: 0,1,1 */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"] {
-  width: 200px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff; /* Color de fondo */
-  color: #000;
+
+section>div>button:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
-/* Especificidad: 0,1,1 */
-input[type="submit"] {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+ */
